@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="#" />
+    <title>Bilregister</title>
+  </head>
+  <body class="page__header page__header--bg py-5">
+    <header class="page__navbar navbar navbar-expand-lg navbar-dark navbar-catalina-blue">
+      <h1 class="col-12 display-2 pd-3 mb-5 text-center">Bilregister</h1>
+    </header>
+    <main class="position-relative container">
+      <div class="mb-3 col-12 col-md-6">
+        <form id="userForm">
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
+            <label for="firstName" class="mr-4 text-xl w-40">Förnamn</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="firstName" />
+          </div>
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
+            <label for="lastName" class="mr-4 text-xl w-40">Efternamn</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="lastName" />
+          </div>
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
+            <label for="username" class="mr-4 text-xl w-40">Användarnamn</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="username" />
+          </div>
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
+            <label for="color" class="mr-4 text-xl w-40">Favoritfärg</label>
+            <select class="bg-white text-slate-800 p-1 flex-1 rounded-md" name="color">
+              <option value="purple">Lila</option>
+              <option value="green">Grön</option>
+              <option value="gray">Grå</option>
+              <option value="red">Röd</option>
+              <option value="yellow">Gul</option>
+            </select>
+          </div>
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center justify-end gap-4">
+            <button
+              class="px-4 py-1 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300"
+              type="reset"
+              name="clearUserForm">
+              Rensa
+            </button>
+            <button
+              class="px-4 py-1 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300"
+              type="submit"
+              name="submitUserForm">
+              Skicka
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="listContainer"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
