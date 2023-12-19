@@ -13,29 +13,37 @@
     <header class="page__navbar navbar navbar-expand-lg navbar-dark navbar-catalina-blue">
       <h1 class="col-12 display-2 pd-3 mb-5 text-center">Bilregister</h1>
     </header>
-    <main class="position-relative container">
+    <main class="position-relative container mt-10">
       <div class="mb-3 col-12 col-md-6">
         <form id="userForm">
           <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="firstName" class="mr-4 text-xl w-40">Förnamn</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="firstName" />
+            <label for="regNum" class="mr-4 text-xl w-40">Registreringsnummer</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="regNum" />
           </div>
           <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="lastName" class="mr-4 text-xl w-40">Efternamn</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="lastName" />
+            <label for="model" class="mr-4 text-xl w-40">Model</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="model" />
           </div>
           <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="username" class="mr-4 text-xl w-40">Användarnamn</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="username" />
+            <label for="manufact" class="mr-4 text-xl w-40">Tillverkare</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="manufact" />
           </div>
           <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="color" class="mr-4 text-xl w-40">Favoritfärg</label>
-            <select class="bg-white text-slate-800 p-1 flex-1 rounded-md" name="color">
-              <option value="purple">Lila</option>
-              <option value="green">Grön</option>
-              <option value="gray">Grå</option>
-              <option value="red">Röd</option>
-              <option value="yellow">Gul</option>
+            <label for="manufactYear" class="mr-4 text-xl w-40">Tillverkningsår</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="manufactYear" />
+          </div>
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
+            <label for="color" class="mr-4 text-xl w-40">Färg</label>
+            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="color" />
+          </div>
+          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
+            <label for="fuel" class="mr-4 text-xl w-40">Drivmedel</label>
+            <select class="bg-white text-slate-800 p-1 flex-1 rounded-md" name="fuel">
+              <option value="petrol">Bensin</option>
+              <option value="diesel">Disel</option>
+              <option value="plug-in-hybrid">Plug-in Hybrid</option>
+              <option value="electricity">El</option>
+              <option value="hybrid">Hybrid</option>
             </select>
           </div>
           <div class="form-control my-4 mx-auto flex w-3/4 items-center justify-end gap-4">
