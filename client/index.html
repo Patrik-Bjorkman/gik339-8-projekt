@@ -10,51 +10,51 @@
     <title>Bilregister</title>
   </head>
   <body class="page__header page__header--bg py-5">
-    <header class="page__navbar navbar navbar-expand-lg navbar-dark navbar-catalina-blue">
+    <header class="page__header page__header--bg py-5">
       <h1 class="col-12 display-2 pd-3 mb-5 text-center">Bilregister</h1>
     </header>
-    <main class="position-relative container mt-10">
-      <div class="mb-3 col-12 col-md-6">
+    <main class="position-relative container mt-8 form-control">
+      <div class="row">
         <form id="userForm">
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="regNum" class="mr-4 text-xl w-40">Registreringsnummer</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="regNum" />
+          <div class="mb-4 col-12 col-md-6">
+            <label for="regNum" class="form-label mr-4 h5 w-40">Registreringsnummer</label>
+            <input class="text-dark p-1 flex-grow-1 rounded-md" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
           </div>
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="model" class="mr-4 text-xl w-40">Model</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="model" />
+          <div class="mb-4 col-12 col-md-6">
+            <label for="model" class="form-label mr-4 h5 w-40">Model</label>
+            <input class="text-dark p-1 flex-grow-1 rounded-md" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="" required />
           </div>
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="manufact" class="mr-4 text-xl w-40">Tillverkare</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="manufact" />
+          <div class="mb-4 col-12 col-md-6">
+            <label for="manufact" class="form-label mr-4 h5 w-40">Tillverkare</label>
+            <input class="text-dark p-1 flex-grow-1 rounded-md" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="" required />
           </div>
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="manufactYear" class="mr-4 text-xl w-40">Tillverkningsår</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="manufactYear" />
+          <div class="mb-4 col-12 col-md-6">
+            <label for="manufactYear" class="form-label mr-4 h5 w-40">Tillverkningsår</label>
+            <input class="text-dark p-1 flex-grow-1 rounded-md" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="" required />
           </div>
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="color" class="mr-4 text-xl w-40">Färg</label>
-            <input class="text-slate-800 p-1 flex-1 rounded-md" type="text" name="color" />
+          <div class="mb-4 col-12 col-md-6">
+            <label for="color" class="form-label mr-4 h5 w-40">Färg</label>
+            <input class="text-dark p-1 flex-grow-1 rounded-md" type="text" name="color" pattern="^[a-zA-Z]+$" aria-label="color" aria-describedby="colorHelp" placeholder="svart" required />
           </div>
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center">
-            <label for="fuel" class="mr-4 text-xl w-40">Drivmedel</label>
-            <select class="bg-white text-slate-800 p-1 flex-1 rounded-md" name="fuel">
+          <div class="mb-4 col-12 col-md-6">
+            <label for="fuel" class="form-label mr-4 h5 w-40">Drivmedel</label>
+            <select class="bg-white text-slate-800 p-1 flex-1 rounded-md" name="fuel" aria-label="fuel" aria-describedby="fuelHelp" placeholder="" required>
               <option value="petrol">Bensin</option>
               <option value="diesel">Disel</option>
               <option value="plug-in-hybrid">Plug-in Hybrid</option>
               <option value="electricity">El</option>
-              <option value="hybrid">Hybrid</option>
+              <option value="hybrid">Miljö/Hybrid</option>
             </select>
           </div>
-          <div class="form-control my-4 mx-auto flex w-3/4 items-center justify-end gap-4">
+          <div class="my-4 mx-auto d-flex w-75 align-items-center justify-content-end gap-4">
             <button
-              class="px-4 py-1 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300"
+              class="px-4 py-1 bg-secondary text-slate-800 rounded-md"
               type="reset"
               name="clearUserForm">
               Rensa
             </button>
             <button
-              class="px-4 py-1 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300"
+              class="px-4 py-1 bg-secondary text-slate-800 rounded-md hover:bg-secondary-dark"
               type="submit"
               name="submitUserForm">
               Skicka
