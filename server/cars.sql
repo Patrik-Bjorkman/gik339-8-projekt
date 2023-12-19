@@ -9,6 +9,6 @@ CREATE TABLE IF NOT EXISTS cars(
   ,fuel VARCHAR(6) NOT NULL
 );
 INSERT INTO cars(id,regNum,model,manuFact,manufactYear,color,fuel) VALUES (1,'ABC123','Ursus S','Lamborghini','2023','Red','Bensin');
-INSERT INTO cars(id,regNum,model,manuFact,manufactYear,color,fuel) VALUES (2,'HGE456','LS','Lexus','2022','Vit','miljöbränsel/Hybrid');
+INSERT INTO cars(id,regNum,model,manuFact,manufactYear,color,fuel) VALUES (2,'HGE456','LS','Lexus','2022','Vit','Miljöbränsle/Hybrid');
 
 select * from cars;
