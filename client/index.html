@@ -18,19 +18,19 @@
         <form id="userForm">
           <div class="mb-4 col-12 col-md-6">
             <label for="regNum" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Registreringsnummer</label>
-            <input class="text-dark-emphasis p-1 flex-grow-1 rounded" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
+            <input class="text-dark-emphasis p-1 flex-grow-1 rounded" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
           </div>
           <div class="mb-4 col-12 col-md-6">
             <label for="model" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Model</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="" required />
+            <input class="text-dark p-1 flex-grow-1 rounded" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="" required />
           </div>
           <div class="mb-4 col-12 col-md-6">
             <label for="manufact" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Tillverkare</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="" required />
+            <input class="text-dark p-1 flex-grow-1 rounded" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="" required />
           </div>
           <div class="mb-4 col-12 col-md-6">
             <label for="manufactYear" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Tillverkningsår</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="" required />
+            <input class="text-dark p-1 flex-grow-1 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="" required />
           </div>
           <div class="mb-4 col-12 col-md-6">
             <label for="color" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Färg</label>
@@ -53,7 +53,7 @@
           </div>
           <div class="mb-4 col-12 col-md-6">
             <label for="fuel" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Drivmedel</label>
-            <select class="bg-white text-slate-800 p-1 flex-1 rounded" name="fuel" aria-label="Välj Bilens Bränsle" aria-describedby="fuelHelp" required>
+            <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="fuel" name="fuel" aria-label="Välj Bilens Bränsle" aria-describedby="fuelHelp" required>
               <option selected disabled hidden>Välj Bränsle</option>
               <option value="petrol">Bensin</option>
               <option value="diesel">Diesel</option>
@@ -76,12 +76,12 @@
           </header>
           <div class="modal-body">
             <ul class="list-group list-group-flush">
-            <li class="list-group-item fw-bold">Registreringsnummer: <span class="fw-normal" id="revRegNum"></span></li>
-            <li class="list-group-item fw-bold">Model: <span class="fw-normal" id="revModel"></span></li>
+            <li class="list-group-item fw-bold">Registreringsnummer: <p class="fw-normal" id="revRegNum"></p></li>
+            <li class="list-group-item fw-bold">Model: <p class="fw-normal" id="revModel"></p></li>
             <li class="list-group-item fw-bold">Tillverkare: <span class="fw-normal" id="revManufact"></span></li>
             <li class="list-group-item fw-bold">Tillverkningsår: <span class="fw-normal" id="revManufactYear"></span></li>
-            <li class="list-group-item fw-bold">Färg: <span class="fw-normal" id="revcolor"></span></li>
-            <li class="list-group-item fw-bold">Drivmedel: <span class="fw-normal" id="revfuel"></span></li>
+            <li class="list-group-item fw-bold">Färg: <span class="fw-normal" id="revColor"></span></li>
+            <li class="list-group-item fw-bold">Drivmedel: <span class="fw-normal" id="revFuel"></span></li>
             </ul>
           </div>
           <div class="modal-footer">

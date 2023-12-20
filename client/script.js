@@ -26,7 +26,7 @@ fetch(localUrl)
                       <p class="col-auto">Färg: ${car.color}</p>`;
       liDiv.style.backgroundColor = car.color;
       liDiv.classList.add("liDiv__styling","border","border-black", "rounded", "col-2");
-      li.classList.add("container","border","border-black","flex","row","rounded","mb-3","p-3");
+      li.classList.add("container","border","border-black","flex","row","rounded","mt-3","p-3");
       ul.appendChild(li)
       li.appendChild(liDiv);
     });
@@ -36,10 +36,33 @@ fetch(localUrl)
 
   const btnReadCars = document.getElementById("btnReadCars");
 
-btnReadCars.addEventListener("click", () => {
-    if (listContainer.hasAttribute("hidden")) {
-        listContainer.removeAttribute("hidden");
-    } else {
-        listContainer.setAttribute("hidden", "hidden");
-    }
-});
+// btnReadCars.addEventListener("click", () => {
+//     if (listContainer.hasAttribute("hidden")) {
+//         listContainer.removeAttribute("hidden");
+//     } else {
+//         listContainer.setAttribute("hidden", "hidden");
+//     }
+// });
+
+
+function modalDetails() {
+  const regNum = document.getElementById('regNum').value;
+  const model = document.getElementById('model').value;
+  const manufact = document.getElementById('manufact').value;
+  const manufactYear = document.getElementById('manufactYear').value;
+  const color = document.getElementById('color').value;
+  const fuel = document.getElementById('fuel').value;
+
+  document.getElementById('revRegNum').textContent = regNum;
+  document.getElementById('revModel').textContent = model;
+  document.getElementById('revManufact').textContent = manufact;
+  document.getElementById('revManufactYear').textContent = manufactYear;
+  document.getElementById('revColor').textContent = color;
+  document.getElementById('revFuel').textContent = fuel;
+}
+document.getElementById('regNum').addEventListener('input', modalDetails);
+document.getElementById('model').addEventListener('input', modalDetails);
+document.getElementById('manufact').addEventListener('input', modalDetails);
+document.getElementById('manufactYear').addEventListener('input', modalDetails);
+document.getElementById('color').addEventListener('input', modalDetails);
+document.getElementById('fuel').addEventListener('input', modalDetails);
