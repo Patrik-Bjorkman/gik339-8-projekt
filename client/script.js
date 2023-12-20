@@ -66,3 +66,43 @@ document.getElementById('manufact').addEventListener('input', modalDetails);
 document.getElementById('manufactYear').addEventListener('input', modalDetails);
 document.getElementById('color').addEventListener('input', modalDetails);
 document.getElementById('fuel').addEventListener('input', modalDetails);
+
+const modalBtnRegister = document.getElementById("modalBtnRegister");
+
+modalBtnRegister.addEventListener("click", () => {
+  const regNum = document.getElementById('regNum').value;
+  const model = document.getElementById('model').value;
+  const manufact = document.getElementById('manufact').value;
+  const manufactYear = document.getElementById('manufactYear').value;
+  const color = document.getElementById('color').value;
+  const fuel = document.getElementById('fuel').value;
+
+  const newCar = {
+    regNum: regNum,
+    model: model,
+    manuFact: manufact,
+    manufactYear: manufactYear,
+    color: color,
+    fuel: fuel
+  };
+
+  fetch(localUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newCar)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('A new car has been added to the database');
+    } else {
+      console.error('Something went wrong');
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+});
+
+
