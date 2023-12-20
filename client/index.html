@@ -17,56 +17,55 @@
       <div class="row">
         <form id="userForm">
           <div class="mb-4 col-12 col-md-6">
-            <label for="regNum" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Registreringsnummer</label>
+            <label for="regNum" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Licens Plate</label>
             <input class="text-dark-emphasis p-1 flex-grow-1 rounded" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
           </div>
           <div class="mb-4 col-12 col-md-6">
+            <label for="manufact" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
+            <input class="text-dark p-1 flex-grow-1 rounded" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" required />
+          </div>
+          <div class="mb-4 col-12 col-md-6">
             <label for="model" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Model</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="" required />
+            <input class="text-dark p-1 flex-grow-1 rounded" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" required />
           </div>
           <div class="mb-4 col-12 col-md-6">
-            <label for="manufact" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Tillverkare</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="" required />
+            <label for="manufactYear" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
+            <input class="text-dark p-1 flex-grow-1 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" required />
           </div>
-          <div class="mb-4 col-12 col-md-6">
-            <label for="manufactYear" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Tillverkningsår</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="" required />
-          </div>
-          <div class="mb-4 col-12 col-md-6">
+          <!-- <div class="mb-4 col-12 col-md-6">
             <label for="color" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Färg</label>
             <input class="text-dark p-1 flex-grow-1 rounded" type="text" name="color" pattern="^[a-zA-Z]+$" aria-label="color" aria-describedby="colorHelp" placeholder="Svart" required />
-          </div>
+          </div> -->
           
           <div class="mb-4 col-12 col-md-6">
-            <label for="color" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Färg</label>
+            <label for="color" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Color</label>
             <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="color" name="color" aria-label="Välj Bilens Färg" aria-describedby="colorHelp" required>
-              <option selected disabled hidden>Välj Färg</option>
-              <option value="White">⚪ Vit</option>
-              <option value="Black">⚫ Svart</option>
-              <option value="Red">🔴 Röd</option>
-              <option value="Blue">🔵 Blå</option>
-              <option value="Yellow">🟡 Gul</option>
-              <option value="Green">🟢 Grön</option>
-              <option value="Grey">🌫️ Grå</option>
-              <option value="Brown">🟤 Brun</option>
+              <option selected disabled hidden>Choose Color</option>
+              <option value="White">⚪ White</option>
+              <option value="Black">⚫ Black</option>
+              <option value="Red">🔴 Red</option>
+              <option value="Blue">🔵 Blue</option>
+              <option value="Yellow">🟡 Yellow</option>
+              <option value="Green">🟢 Green</option>
+              <option value="Grey">🌫️ Grey</option>
+              <option value="Brown">🟤 Brown</option>
             </select>
           </div>
           <div class="mb-4 col-12 col-md-6">
-            <label for="fuel" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Drivmedel</label>
-            <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="fuel" name="fuel" aria-label="Välj Bilens Bränsle" aria-describedby="fuelHelp" required>
-              <option selected disabled hidden>Välj Bränsle</option>
-              <option value="Petrol">Bensin</option>
+            <label for="fuel" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
+            <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" required>
+              <option selected disabled hidden>Choose Fuel</option>
+              <option value="Petrol">Petrol</option>
               <option value="Diesel">Diesel</option>
-              <option value="Electricity">El</option>
-              <option value="Hybrid/Miljöbränsle">Miljö/Hybrid</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Flex Fuel/Hybrid">Flex Fuel/Hybrid</option>
             </select>
           </div>
           <div class="col-12 col-sm-11 col-md-10 col-lg-9 col-xl-12 m-0 pt-4 mt-4 pt-xl-0 mt-xl-0 d-flex justify-content-center">
-            <button type="reset" class="btn btn-secondary ms-auto" id="clear">Rensa</button>
-            <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Skicka</button>
-        
+            <button type="reset" class="btn btn-gradient btn-gradient--blue ms-auto" id="clear"><span>Clear</span></button>
+            <button type="button" class="btn btn-gradient btn-gradient--orange ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
+            <button type="button" class="btn btn-gradient btn-gradient--green ms-2" id="btnReadCars"><span>Show Registry</span></button>
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    
             <div class="modal-dialog">
               <div class="modal-content">
                 <header class="modal-header">
@@ -85,7 +84,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="modalBtnRegister">Register</button>
+                  <button type="submit" class="btn btn-primary" id="modalBtnRegister" name="submit">Register</button>
                 </div>
               </div>
             </div>
@@ -93,7 +92,7 @@
         </div>
       </form>
     </div>
-      <div id="listContainer"></div>
+      <div id="listContainer" hidden></div>
     </main>
 
     <script src="script.js"></script>

@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS cars(
   ,color VARCHAR(6) NOT NULL
   ,fuel VARCHAR(6) NOT NULL
 );
-INSERT INTO cars(id,regNum,model,manuFact,manufactYear,color,fuel) VALUES (1,'ABC123','Ursus S','Lamborghini','2023','Red','Bensin');
-INSERT INTO cars(id,regNum,model,manuFact,manufactYear,color,fuel) VALUES (2,'HGE456','LS','Lexus','2022','White','Hybrid');
+INSERT INTO cars(id,regNum,model,manufact,manufactYear,color,fuel) VALUES (1,'ABC123','Ursus S','Lamborghini','2023','Red','Petrol');
+INSERT INTO cars(id,regNum,model,manufact,manufactYear,color,fuel) VALUES (2,'HGE456','LS','Lexus','2022','White','Diesel');
 
 select * from cars;

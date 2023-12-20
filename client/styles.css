@@ -3,6 +3,70 @@ body {
     color: #191716;
 }
 .liDiv__styling {
+    min-width: 2rem;
     min-height: 2rem;
     color: black;
 }
+.btn-gradient {
+    position: relative;
+    border: none;
+    overflow: hidden;
+    transition: color 0.7s ease; /* Transition effect for text color */
+  }
+  
+.btn-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease; /* Transition effect for opacity */
+  z-index: 0;
+  }
+  
+  /* Modifier for orange gradient */
+.btn-gradient--orange {
+    background-image: linear-gradient(to right, #EDB458,#E8871E); /* Initial gradient */
+  }
+  
+.btn-gradient--orange::before {
+    background-image: linear-gradient(to right, #E8871E, #EDB458); /* Hover gradient */
+}
+  
+  /* Modifier for blue gradient */
+.btn-gradient--blue {
+    background-image: linear-gradient(to right, #6dd5ed, #2193b0); /* Initial gradient */
+}
+  
+.btn-gradient--blue::before {
+    background-image: linear-gradient(to right, #2193b0, #6dd5ed); /* Hover gradient */
+}
+
+.btn-gradient--green {
+    background-image: linear-gradient(to right, #a8e063, #56ab2f); /* Initial gradient */
+}
+.btn-gradient--green::before {
+    background-image: linear-gradient(to right, #56ab2f, #a8e063); /* Initial gradient */
+}
+  
+.btn-gradient:hover::before {
+    opacity: 1;
+}
+.btn-gradient span {
+    position: relative;
+    z-index: 1;
+}
+.btn-gradient--orange:hover::before,
+.btn-gradient--blue:hover::before,
+.btn-gradient--green:hover::before,
+.btn-gradient--purple:hover::before,
+.btn-gradient--red:hover::before,
+.btn-gradient--yellow:hover::before,
+.btn-gradient--pink:hover::before,
+.btn-gradient--teal:hover::before,
+.btn-gradient--black:hover::before,
+.btn-gradient--white:hover::before {
+    opacity: 1;
+  }

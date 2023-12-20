@@ -42,7 +42,7 @@ server.get('/cars/:id', (req, res) => {
 });
 server.post('/cars', (req, res) => {
     const newCar = req.body;
-    const sql = 'INSERT INTO cars(regNum, model, manuFact, manufactYear, color, fuel) VALUES (?, ?, ?, ?, ?, ?)';
+    const sql = 'INSERT INTO cars(regNum, model, manufact, manufactYear, color, fuel) VALUES (?, ?, ?, ?, ?, ?)';
     db.run(sql, Object.values(newCar), (err) => {
         if (err) {
             console.error(err.message);
@@ -60,7 +60,7 @@ server.put('/cars', (req, res) => {
     const car = {
         regNum: updatedCar.regNum, 
         model: updatedCar.model, 
-        manuFact: updatedCar.manuFact, 
+        manufact: updatedCar.manufact, 
         manufactYear: updatedCar.manufactYear, 
         color: updatedCar.color, 
         fuel: updatedCar.fuel
