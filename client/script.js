@@ -7,10 +7,9 @@ function fetchData() {
     .then(result => result.json())  
     .then((cars) => {
       if (cars.length > 0) {
-        let html = '<div class="row">'; // Starta en Bootstrap-rad
+        let html = '<div class="row">'; 
         cars.forEach(car => {
-          // Använd klassen col-auto för att göra varje bilkolumn bara så bred som dess innehåll
-          // Du kan också använda col-sm, col-md, col-lg, col-xl för responsiva bredder
+          
           html += `<div class="col-auto mb-3">
                     <div class="container mt-3 border border-black rounded p-3">
                       <h3 class="h1 fw-bold">${car.regNum}</h3>
@@ -27,7 +26,7 @@ function fetchData() {
                     </div>
                   </div>`;
         });
-        html += '</div>'; // Avsluta Bootstrap-rad
+        html += '</div>';
         const listContainer = document.getElementById("listContainer");
         listContainer.innerHTML = "";
         listContainer.insertAdjacentHTML("beforeend", html);
