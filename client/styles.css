@@ -2,6 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #191716;
 }
+.page__header{
+    background: linear-gradient(to right, #198754, #5e34be);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+
 .liDiv__styling {
     min-width: 2rem;
     min-height: 2rem;
