@@ -7,29 +7,63 @@ function fetchData() {
     .then(result => result.json())  
     .then((cars) => {
       if (cars.length > 0) {
-        let html = `<ul>`;
+        let html = '<div class="row">'; // Starta en Bootstrap-rad
         cars.forEach(car => {
-          html += `<li class="container border border-black flex row rounded mt-3 p-3"><h3 class="h1 fw-bold">${car.regNum}</h3>
-                  <p class="col-auto">Manufacturer: ${car.manufact}</p>        
-                  <p class="col-auto">Model: ${car.model}</p>
-                  <p class="col-auto">Year Manufactured: ${car.manufactYear}</p>
-                  <p class="col-auto">Fuel: ${car.fuel}</p>
-                  <p class="col-auto">ID: ${car.id}</p>
-                  <p class="col-auto">Color: ${car.color}</p>
-                  <div class=" liDiv__styling border border-black rounded col-2" style="background-color: ${car.color}"></div>
-                  <div class="container m-4">
-                  <button type="button" class="btn btn-primary col-auto" onClick="setCurrentCar(${car.id})">Update</button>
-                  <button type="button" class="btn btn-danger col-auto" onClick="deleteCar(${car.id})">Delete</button>
-                  </div>
-                  </li>`;
+          // Använd klassen col-auto för att göra varje bilkolumn bara så bred som dess innehåll
+          // Du kan också använda col-sm, col-md, col-lg, col-xl för responsiva bredder
+          html += `<div class="col-auto mb-3">
+                    <div class="container mt-3 border border-black rounded p-3">
+                      <h3 class="h1 fw-bold">${car.regNum}</h3>
+                      <p>Manufacturer: ${car.manufact}</p>        
+                      <p>Model: ${car.model}</p>
+                      <p>Year Manufactured: ${car.manufactYear}</p>
+                      <p>Fuel: ${car.fuel}</p>
+                      <p>ID: ${car.id}</p>
+                      <p>Color: <span class="d-inline-block" style="background-color: ${car.color}; width: 30px; height: 20px; border: 1px solid #000;"></span> ${car.color}</p>
+                      <div class="mt-3">
+                        <button type="button" class="btn btn-primary" onClick="setCurrentCar(${car.id})">Uppdatera</button>
+                        <button type="button" class="btn btn-danger" onClick="deleteCar(${car.id})">Radera</button>
+                      </div>
+                    </div>
+                  </div>`;
         });
-        html += `</ul>`;
+        html += '</div>'; // Avsluta Bootstrap-rad
         const listContainer = document.getElementById("listContainer");
         listContainer.innerHTML = "";
         listContainer.insertAdjacentHTML("beforeend", html);
       }
     });
 }
+
+
+// function fetchData() {
+//   fetch(localUrl)
+//     .then(result => result.json())  
+//     .then((cars) => {
+//       if (cars.length > 0) {
+//         let html = `<ul>`;
+//         cars.forEach(car => {
+//           html += `<li class="container border border-black flex row rounded mt-3 p-3"><h3 class="h1 fw-bold">${car.regNum}</h3>
+//                   <p class="d-block">Manufacturer: ${car.manufact}</p>        
+//                   <p class="d-block">Model: ${car.model}</p>
+//                   <p class="d-block">Year Manufactured: ${car.manufactYear}</p>
+//                   <p class="d-block">Fuel: ${car.fuel}</p>
+//                   <p class="d-block">ID: ${car.id}</p>
+//                   <p class="col-auto">Color: ${car.color}</p>
+//                   <div class=" liDiv__styling border border-black rounded col-2" style="background-color: ${car.color}"></div>
+//                   <div class="container m-4">
+//                   <button type="button" class="btn btn-primary col-auto" onClick="setCurrentCar(${car.id})">Update</button>
+//                   <button type="button" class="btn btn-danger col-auto" onClick="deleteCar(${car.id})">Delete</button>
+//                   </div>
+//                   </li>`;
+//         });
+//         html += `</ul>`;
+//         const listContainer = document.getElementById("listContainer");
+//         listContainer.innerHTML = "";
+//         listContainer.insertAdjacentHTML("beforeend", html);
+//       }
+//     });
+// }
 
 function setCurrentCar(id) {
   console.log('current',id);

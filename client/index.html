@@ -14,7 +14,7 @@
       <h1 class="col-12 display-4 pd-3 py-3 text-center">Bilregister</h1>
     </header>
     <main class="position-relative container mt-8 form-control py-3">
-      <div class="row">
+      <div class="row ps-3">
         <form id="userForm" class="col-12">
           <div class="mb-4 col-md-6">
             <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Licens Plate</label>
@@ -61,7 +61,7 @@
               <option value="Flex Fuel/Hybrid">Flex Fuel/Hybrid</option>
             </select>
           </div>
-          <div class="col-12 col-sm-11 col-md-10 col-lg-9 col-xl-12 m-0 pt-4 mt-4 pt-xl-0 mt-xl-0 d-flex justify-content-center">
+          <div class="col-lg-9 col-xl-12 m-0 p-4 mt-4 pt-xl-0 mt-xl-0 d-flex justify-content-end">
             <button type="reset" class="btn btn-gradient btn-gradient--blue ms-auto" id="clear"><span>Clear</span></button>
             <button type="button" class="btn btn-gradient btn-gradient--orange ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
             <button type="button" class="btn btn-gradient btn-gradient--green ms-2" id="btnReadCars"><span>Show Registry</span></button>
@@ -92,7 +92,7 @@
         </div>
       </form>
     </div>
-      <div id="listContainer" hidden></div>
+      <div class="p-1 justify-content-center" id="listContainer" hidden></div>
     </main>
 
     <script src="script.js"></script>
