@@ -9,26 +9,26 @@
     <link rel="shortcut icon" href="#" />
     <title>Bilregister</title>
   </head>
-  <body class="page__header py-5 text-white bg-secondary-subtle container-md" >
-    <header class="page__header py-3 bg-dark">
+  <body class="page__header py-5 text-white bg-secondary-subtle container" >
+    <header class="page__header py-3 bg-dark rounded">
       <h1 class="col-12 display-4 pd-3 py-3 text-center">Bilregister</h1>
     </header>
     <main class="position-relative container mt-8 form-control py-3">
       <div class="row">
-        <form id="userForm">
-          <div class="mb-4 col-12 col-md-6">
+        <form id="userForm" class="col-12">
+          <div class="mb-4 col-md-6">
             <label for="regNum" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Licens Plate</label>
             <input class="text-dark-emphasis p-1 flex-grow-1 rounded" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
           </div>
-          <div class="mb-4 col-12 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="manufact" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
             <input class="text-dark p-1 flex-grow-1 rounded" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" required />
           </div>
-          <div class="mb-4 col-12 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="model" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Model</label>
             <input class="text-dark p-1 flex-grow-1 rounded" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" required />
           </div>
-          <div class="mb-4 col-12 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="manufactYear" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
             <input class="text-dark p-1 flex-grow-1 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" required />
           </div>
@@ -37,7 +37,7 @@
             <input class="text-dark p-1 flex-grow-1 rounded" type="text" name="color" pattern="^[a-zA-Z]+$" aria-label="color" aria-describedby="colorHelp" placeholder="Svart" required />
           </div> -->
           
-          <div class="mb-4 col-12 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="color" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Color</label>
             <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="color" name="color" aria-label="Välj Bilens Färg" aria-describedby="colorHelp" required>
               <option selected disabled hidden>Choose Color</option>
@@ -51,7 +51,7 @@
               <option value="Brown">🟤 Brown</option>
             </select>
           </div>
-          <div class="mb-4 col-12 col-md-6">
+          <div class="mb-4 col-md-6">
             <label for="fuel" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
             <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" required>
               <option selected disabled hidden>Choose Fuel</option>
