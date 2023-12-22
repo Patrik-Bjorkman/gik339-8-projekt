@@ -1,12 +1,24 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #191716;
+    /* background-image: url('./img/pexels-mudassir-ali-2680270.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;  */
 }
-.page__header{
-    /* background: linear-gradient(to right, #198754, #5e34be); */
+/* .page__header{
+    background: linear-gradient(to right, #198754, #5e34be);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+    border:none;
+    box-shadow:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+} */
+.mb-7 {
+    margin-bottom: 7rem;
 }
-
 .liDiv__styling {
     min-width: 2rem;
     min-height: 2rem;
@@ -96,9 +108,8 @@ body {
 
 .animated-background {
     position: relative;
-    background: linear-gradient(270deg, #198754, #196d87, #5e34be);
-    background-size: 800% 800%;
-    animation: moveGradient 40s ease infinite;
+    background: linear-gradient(270deg, #134074, #56A3A6, #DBFEB8);
+    background-size: 400% 400%;
+    animation:moveGradient 30s ease infinite;
     color: #fff;
-    overflow: hidden;
 }
