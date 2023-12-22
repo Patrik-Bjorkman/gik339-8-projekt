@@ -8,13 +8,7 @@ body {
     background-attachment: fixed;  */
 }
 /* .page__header{
-    background: linear-gradient(to right, #198754, #5e34be);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
-    border:none;
-    box-shadow:none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    background: #F3EFE0;
 } */
 .mb-7 {
     margin-bottom: 7rem;
@@ -80,6 +74,12 @@ body {
 .btn-gradient--red::before {
     background-image: linear-gradient(to right, #ed5e5e, #ff418d);
 }
+.btn-gradient--black {
+    background-image: linear-gradient(to right, #808F85, #434343);
+}
+.btn-gradient--black::before {
+    background-image: linear-gradient(to right, #434343, #000000);
+}
 .btn-gradient:hover::before {
     opacity: 1;
 }
@@ -108,8 +108,8 @@ body {
 
 .animated-background {
     position: relative;
-    background: linear-gradient(270deg, #134074, #56A3A6, #DBFEB8);
+    background: linear-gradient(20deg, #198754, #5e34be,#119d5c, #4416ad);
     background-size: 400% 400%;
-    animation:moveGradient 30s ease infinite;
+    animation:moveGradient 20s ease infinite;
     color: #fff;
 }

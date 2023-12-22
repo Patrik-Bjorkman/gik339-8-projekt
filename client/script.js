@@ -11,7 +11,7 @@ function fetchData() {
         cars.forEach(car => {
           
           html += `<div class="col-auto mb-3">
-                    <div class="container mt-3 border border-black rounded p-3">
+                    <div class="container mt-3 border border-black shadow rounded p-3">
                       <h3 class="h1 fw-bold">${car.regNum}</h3>
                       <p>Manufacturer: ${car.manufact}</p>        
                       <p>Model: ${car.model}</p>
@@ -71,12 +71,12 @@ function setCurrentCar(id) {
     .then((result) => result.json())
     .then((car) => {
       console.log(car);
-      userForm.regNum.value = car.regNum;
-      userForm.model.value = car.model;
-      userForm.manufact.value = car.manufact;
-      userForm.manufactYear.value = car.manufactYear;
-      userForm.color.value = car.color;
-      userForm.fuel.value = car.fuel;
+      carForm.regNum.value = car.regNum;
+      carForm.model.value = car.model;
+      carForm.manufact.value = car.manufact;
+      carForm.manufactYear.value = car.manufactYear;
+      carForm.color.value = car.color;
+      carForm.fuel.value = car.fuel;
 
       localStorage.setItem('currentId', car.id);
     });
@@ -163,7 +163,7 @@ document.getElementById('manufactYear').addEventListener('input', modalDetails);
 document.getElementById('color').addEventListener('input', modalDetails);
 document.getElementById('fuel').addEventListener('input', modalDetails);
 
-userForm.addEventListener("submit", handleSubmit);
+carForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -175,12 +175,12 @@ function handleSubmit(e) {
     color: "",
     fuel: ""
   };
-  serverCarObject.regNum = userForm.regNum.value;
-  serverCarObject.model = userForm.model.value;
-  serverCarObject.manufact = userForm.manufact.value;
-  serverCarObject.manufactYear = userForm.manufactYear.value;
-  serverCarObject.color = userForm.color.value;
-  serverCarObject.fuel = userForm.fuel.value;
+  serverCarObject.regNum = carForm.regNum.value;
+  serverCarObject.model = carForm.model.value;
+  serverCarObject.manufact = carForm.manufact.value;
+  serverCarObject.manufactYear = carForm.manufactYear.value;
+  serverCarObject.color = carForm.color.value;
+  serverCarObject.fuel = carForm.fuel.value;
 
   const id = localStorage.getItem('currentId');
   if (id) {
@@ -199,5 +199,5 @@ function handleSubmit(e) {
     fetchData();
 
     localStorage.removeItem('currentId');
-    userForm.reset();
+    carForm.reset();
 }
