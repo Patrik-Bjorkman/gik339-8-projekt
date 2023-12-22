@@ -10,8 +10,8 @@
     <title>Bilregister</title>
   </head>
   <body class="py-5 text-white bg-secondary-subtle container" >
-    <header class="page__header py-3 rounded">
-      <h1 class="col-12 display-4 pd-3 py-3 text-center">Bilregister</h1>
+    <header class="page__header animated-background py-3 rounded">
+      <div class="content"><h1 class="col-12 display-4 pd-3 py-3 text-center">Car Registry</h1></div>
     </header>
     <main class="position-relative container mt-8 form-control py-3">
       <div class="row ps-3">
@@ -32,10 +32,6 @@
             <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
             <input class="text-dark p-1 flex-grow-1 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" required />
           </div>
-          <!-- <div class="mb-4 col-12 col-md-6">
-            <label for="color" class="form-label mr-4 h5 w-40 text-secondary-emphasis">Färg</label>
-            <input class="text-dark p-1 flex-grow-1 rounded" type="text" name="color" pattern="^[a-zA-Z]+$" aria-label="color" aria-describedby="colorHelp" placeholder="Svart" required />
-          </div> -->
           
           <div class="mb-4 col-md-6">
             <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
@@ -63,8 +59,8 @@
           </div>
           <div class="col-lg-9 col-xl-12 m-0 p-4 mt-4 pt-xl-0 mt-xl-0 d-flex justify-content-end">
             <button type="reset" class="btn btn-gradient btn-gradient--blue ms-auto" id="clear"><span>Clear</span></button>
-            <button type="button" class="btn btn-gradient btn-gradient--orange ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
-            <button type="button" class="btn btn-gradient btn-gradient--green ms-2" id="btnReadCars"><span>Show Registry</span></button>
+            <button type="button" class="btn btn-gradient btn-gradient--green ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
+            <button type="button" class="btn btn-gradient btn-gradient--purple ms-2" id="btnReadCars"><span>Show Registry</span></button>
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -94,7 +90,9 @@
     </div>
       <div class="p-1 justify-content-center" id="listContainer" hidden></div>
     </main>
-
+    <footer class="page__footer text-center py-3">
+      <p class="text-muted">© 2024 - Car Registry</p>
+    </footer>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

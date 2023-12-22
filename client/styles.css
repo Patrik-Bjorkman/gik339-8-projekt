@@ -3,7 +3,7 @@ body {
     color: #191716;
 }
 .page__header{
-    background: linear-gradient(to right, #198754, #5e34be);
+    /* background: linear-gradient(to right, #198754, #5e34be); */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -16,7 +16,7 @@ body {
     position: relative;
     border: none;
     overflow: hidden;
-    transition: color 0.7s ease; /* Transition effect for text color */
+    transition: color 0.7s ease;
   }
   
 .btn-gradient::before {
@@ -27,11 +27,11 @@ body {
   right: 0;
   bottom: 0;
   opacity: 0;
-  transition: opacity 0.7s ease; /* Transition effect for opacity */
+  transition: opacity 1.0s ease;
   z-index: 0;
   }
   
-  /* Modifier for orange gradient */
+
 .btn-gradient--orange {
     background-image: linear-gradient(to right, #EDB458,#E8871E); /* Initial gradient */
   }
@@ -39,23 +39,35 @@ body {
 .btn-gradient--orange::before {
     background-image: linear-gradient(to right, #E8871E, #EDB458); /* Hover gradient */
 }
-  
-  /* Modifier for blue gradient */
+
 .btn-gradient--blue {
-    background-image: linear-gradient(to right, #6dd5ed, #2193b0); /* Initial gradient */
+    background-image: linear-gradient(to right, #6dd5ed, #2193b0);
 }
   
 .btn-gradient--blue::before {
-    background-image: linear-gradient(to right, #2193b0, #6dd5ed); /* Hover gradient */
+    background-image: linear-gradient(to right, #2193b0, #6dd5ed); 
 }
-
+ /* Modifier for green gradient */
 .btn-gradient--green {
-    background-image: linear-gradient(to right, #a8e063, #56ab2f); /* Initial gradient */
+    background-image: linear-gradient(to right, #a8e063, #56ab2f);
 }
 .btn-gradient--green::before {
-    background-image: linear-gradient(to right, #56ab2f, #a8e063); /* Initial gradient */
+    background-image: linear-gradient(to right, #56ab2f, #a8e063); 
 }
-  
+
+.btn-gradient--purple {
+    background-image: linear-gradient(to right, #198754, #5e34be);
+}
+.btn-gradient--purple::before {
+    background-image: linear-gradient(to right, #5e34be, #c325fc); 
+}
+
+.btn-gradient--red {
+    background-image: linear-gradient(to right, #f92323, #ed5e5e);
+}
+.btn-gradient--red::before {
+    background-image: linear-gradient(to right, #ed5e5e, #ff418d);
+}
 .btn-gradient:hover::before {
     opacity: 1;
 }
@@ -75,3 +87,18 @@ body {
 .btn-gradient--white:hover::before {
     opacity: 1;
   }
+
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-background {
+    position: relative;
+    background: linear-gradient(270deg, #198754, #196d87, #5e34be);
+    background-size: 800% 800%;
+    animation: moveGradient 40s ease infinite;
+    color: #fff;
+    overflow: hidden;
+}

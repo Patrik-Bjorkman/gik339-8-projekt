@@ -20,8 +20,8 @@ function fetchData() {
                       <p>ID: ${car.id}</p>
                       <p>Color: <span class="d-inline-block" style="background-color: ${car.color}; width: 30px; height: 20px; border: 1px solid #000;"></span> ${car.color}</p>
                       <div class="mt-3">
-                        <button type="button" class="btn btn-primary" onClick="setCurrentCar(${car.id})">Uppdatera</button>
-                        <button type="button" class="btn btn-danger" onClick="deleteCar(${car.id})">Radera</button>
+                        <button type="button" class="btn btn-gradient btn-gradient--blue" onClick="setCurrentCar(${car.id})"><span>Update</span></button>
+                        <button type="button" class="btn btn-gradient btn-gradient--red" onClick="deleteCar(${car.id})"><span>Delete</span></button>
                       </div>
                     </div>
                   </div>`;
