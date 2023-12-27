@@ -7,62 +7,34 @@ function fetchData() {
     .then(result => result.json())  
     .then((cars) => {
       if (cars.length > 0) {
-        let html = '<div class="row">'; 
+        let html = '<div class="container"><div class="row justify-content-center">'; 
         cars.forEach(car => {
           
-          html += `<div class="col-auto mb-3">
-                    <div class="container mt-3 border border-black shadow rounded p-3">
-                      <h3 class="h1 fw-bold">${car.regNum}</h3>
-                      <p>Manufacturer: ${car.manufact}</p>        
-                      <p>Model: ${car.model}</p>
-                      <p>Year Manufactured: ${car.manufactYear}</p>
-                      <p>Fuel: ${car.fuel}</p>
-                      <p>ID: ${car.id}</p>
-                      <p>Color: <span class="d-inline-block" style="background-color: ${car.color}; width: 30px; height: 20px; border: 1px solid #000;"></span> ${car.color}</p>
-                      <div class="mt-3">
-                        <button type="button" class="btn btn-gradient btn-gradient--blue" onClick="setCurrentCar(${car.id})"><span>Update</span></button>
-                        <button type="button" class="btn btn-gradient btn-gradient--red" onClick="deleteCar(${car.id})"><span>Delete</span></button>
-                      </div>
+          html += `<div class="card shadow col-12 col-md-4 col-lg-3 col-xxl-2 m-1 text-center p-0">
+                    <div class="card-header">
+                      <h3 class="card-title m-0">${car.regNum}</h3>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">Manufacturer: ${car.manufact}</p>        
+                      <p class="card-text">Model: ${car.model}</p>
+                      <p class="card-text">Year Manufactured: ${car.manufactYear}</p>
+                      <p class="card-text">Fuel: ${car.fuel}</p>
+                      <p class="card-text">ID: ${car.id}</p>
+                      <p class="card-text">Color: <span class="d-inline-block border" style="background-color: ${car.color}; width: 30px; height: 20px;"></span> ${car.color}</p>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <button type="button" class="btn text-black animated-background-button--orange" onClick="setCurrentCar(${car.id})"><span>Update</span></button>
+                      <button type="button" class="btn text-black animated-background-button--red" onClick="deleteCar(${car.id})"><span>Delete</span></button>
                     </div>
                   </div>`;
         });
-        html += '</div>';
+        html += '</div></div>';
         const listContainer = document.getElementById("listContainer");
         listContainer.innerHTML = "";
         listContainer.insertAdjacentHTML("beforeend", html);
       }
     });
 }
-
-
-// function fetchData() {
-//   fetch(localUrl)
-//     .then(result => result.json())  
-//     .then((cars) => {
-//       if (cars.length > 0) {
-//         let html = `<ul>`;
-//         cars.forEach(car => {
-//           html += `<li class="container border border-black flex row rounded mt-3 p-3"><h3 class="h1 fw-bold">${car.regNum}</h3>
-//                   <p class="d-block">Manufacturer: ${car.manufact}</p>        
-//                   <p class="d-block">Model: ${car.model}</p>
-//                   <p class="d-block">Year Manufactured: ${car.manufactYear}</p>
-//                   <p class="d-block">Fuel: ${car.fuel}</p>
-//                   <p class="d-block">ID: ${car.id}</p>
-//                   <p class="col-auto">Color: ${car.color}</p>
-//                   <div class=" liDiv__styling border border-black rounded col-2" style="background-color: ${car.color}"></div>
-//                   <div class="container m-4">
-//                   <button type="button" class="btn btn-primary col-auto" onClick="setCurrentCar(${car.id})">Update</button>
-//                   <button type="button" class="btn btn-danger col-auto" onClick="deleteCar(${car.id})">Delete</button>
-//                   </div>
-//                   </li>`;
-//         });
-//         html += `</ul>`;
-//         const listContainer = document.getElementById("listContainer");
-//         listContainer.innerHTML = "";
-//         listContainer.insertAdjacentHTML("beforeend", html);
-//       }
-//     });
-// }
 
 function setCurrentCar(id) {
   console.log('current',id);
@@ -81,53 +53,17 @@ function setCurrentCar(id) {
       localStorage.setItem('currentId', car.id);
     });
 }
-
 function deleteCar(id) {
-  // Dynamically create the modal HTML
-  let modalHTML = `
-    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title text-black" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class="text-black">The Car with ID: ${id}, has been deleted!</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-  // Insert the modal into the DOM
-  const body = document.body;
-  body.insertAdjacentHTML('beforeend', modalHTML);
+  fetch(`${localUrl}/${id}`, { method: 'DELETE' })
+    .then((result) => {
+      const myModal = new bootstrap.Modal(document.getElementById('createModal'));
+      const modalBodyMessage = document.getElementById('modalMessage');
+      modalBodyMessage.innerHTML = `<p>Car with ID: ${id} has been deleted</p>`;
 
-  // Show the modal using Bootstrap's JavaScript
-  const deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
-  deleteModal.show();
+      myModal.show();
 
-  // Add event listener for the confirm deletion button
-  document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
-    fetch(`${localUrl}/${id}`, {
-      method: 'DELETE'
-    })
-    .then(response => response.json())
-    .then(() => {
-      // On successful deletion, re-fetch the data and close the modal
       fetchData();
-      deleteModal.hide();
-    })
-    .catch(error => console.error('Error:', error))
-    .finally(() => {
-      // Clean up by removing the modal from the DOM
-      document.getElementById('deleteConfirmationModal').remove();
     });
-  }, { once: true }); // Use the 'once' option so the event will only trigger once
 }
 
 const btnReadCars = document.getElementById("btnReadCars");
@@ -196,8 +132,30 @@ function handleSubmit(e) {
   });
 
   fetch(request)
-    fetchData();
+    .then(() => {
+      // Code to show the modal with different messages
+      const myModal = new bootstrap.Modal(document.getElementById('createModal'));
+      const modalBodyMessage = document.getElementById('modalMessage');
 
-    localStorage.removeItem('currentId');
-    carForm.reset();
+      if (serverCarObject.id) {
+        // Message for update operation
+        modalBodyMessage.innerHTML = `<p>Car with ID: ${serverCarObject.id} has been updated.</p>`;
+      } else {
+        // Message for create operation
+        modalBodyMessage.innerHTML = `<p>New car has been added.</p>`;
+      }
+
+      myModal.show();
+
+      fetchData();
+    });
+
+  localStorage.removeItem('currentId');
+  carForm.reset();
 }
+
+const footerYear = document.getElementById("footerYear");
+const date = new Date();
+const year = date.getFullYear();
+
+footerYear.innerHTML = `© ${year} - Car Registry`;

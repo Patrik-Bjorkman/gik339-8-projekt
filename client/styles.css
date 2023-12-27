@@ -113,3 +113,47 @@ body {
     animation:moveGradient 20s ease infinite;
     color: #fff;
 }
+
+
+@keyframes moveGradientButton {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-background-button--purple {
+    position: relative;
+    background: linear-gradient(60deg, #198754, #5e34be,#c325fc);
+    background-size: 400% 400%;
+    animation:moveGradientButton 15s ease infinite;
+    color: #fff;
+}
+
+.animated-background-button--blue {
+    position: relative;
+    background: linear-gradient(60deg, #6dd5ed, #2193b0,#39cdf2);
+    background-size: 400% 400%;
+    animation:moveGradientButton 15s ease infinite;
+    color: #fff;
+}
+.animated-background-button--green {
+    position: relative;
+    background: linear-gradient(60deg, #a8e063, #317611,#6ff033);
+    background-size: 400% 400%;
+    animation:moveGradientButton 15s ease infinite;
+    color: #fff;
+}
+.animated-background-button--red {
+    position: relative;
+    background: linear-gradient(60deg, #ff9696, #d92525,#e57289);
+    background-size: 400% 400%;
+    animation:moveGradientButton 15s ease infinite;
+    color: #fff;
+}
+.animated-background-button--orange {
+    position: relative;
+    background: linear-gradient(60deg, #EDB458,#E8871E,#fbdd72);
+    background-size: 400% 400%;
+    animation:moveGradientButton 15s ease infinite;
+    color: #fff;
+}

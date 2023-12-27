@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
     <link rel="shortcut icon" href="#" />
@@ -11,7 +13,46 @@
   </head>
   <body class="py-5 animated-background text-white bg-secondary-subtle container" >
     <header class="page__header col-6 mx-auto shadow p-3 mb-5 rounded">
-      <div class="row justify-content-center content"><h1 class="col-12 display-4 pd-3 py-3 text-center">Car Registry</h1></div>
+      <div class="row justify-content-center">
+        <div class="col-auto mx-auto">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ./img/webp/car_logo-128.webp 128w,
+                ./img/webp/car_logo-256.webp 256w,
+                ./img/webp/car_logo-512.webp 512w,
+                ./img/webp/car_logo-750.webp 750w,
+              "
+              sizes="(min-width: 1000px) 400px, 
+                     (min-width: 780px) 316px, 
+                     (min-width: 580px) 226px, 
+                     calc(50vw - 44px)"
+            >
+            <source
+              type="image/png"
+              srcset="
+                ./img/png/car_logo-128.png 128w,
+                ./img/png/car_logo-256.png 256w,
+                ./img/png/car_logo-512.png 512w,
+                ./img/png/car_logo-750.png 750w,
+              "
+              sizes="(min-width: 1000px) 400px, 
+                     (min-width: 780px) 316px, 
+                     (min-width: 580px) 226px, 
+                     calc(50vw - 44px)"
+            >
+            <img
+              src="./img/png/car_logo-512.png"
+              width="400"
+              height="400"
+              alt="Car Registry Logo"
+              class="img-fluid"
+            >
+          </picture>
+        </div>
+      </div>
+      <div class="row justify-content-center content"><h1 class="col-12 display-4 pd-3 py-3 text-center font-family">Car Registry</h1></div>
     </header>
     <nav class="navbar">
       <div class="container-fluid d-flex justify-content-end p-0">
@@ -28,88 +69,107 @@
     </nav>
     <main class="position-relative container mt-8 form-control py-3">
       <div class="row">
-        <form id="carForm" class="col-12 row pe-0">
-          <div class="col-lg-6">
-            <div class="mb-4 col-md-6">
-              <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">License Plate</label>
-              <input class="text-dark-emphasis p-1 flex-grow-1 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
+        <form id="carForm" class="col-12">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-4 col-12">
+                <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">License Plate</label>
+                <input class="text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
+              </div>
+              <div class="mb-4 col-12">
+                <label for="manufact" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
+                <input class="text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" required />
+              </div>
+              <div class="mb-4 col-12">
+                <label for="model" class="form-label d-block h5 w-40 text-secondary-emphasis">Model</label>
+                <input class="text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" required />
+              </div>
             </div>
-            <div class="mb-4 col-md-6">
-              <label for="manufact" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
-              <input class="text-dark p-1 flex-grow-1 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" required />
-            </div>
-            <div class="mb-4 col-md-6">
-              <label for="model" class="form-label d-block h5 w-40 text-secondary-emphasis">Model</label>
-              <input class="text-dark p-1 flex-grow-1 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" required />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="mb-4 col-md-6">
-              <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
-              <input class="text-dark p-1 flex-grow-1 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" required />
-            </div>
-            <div class="mb-4 col-md-6">
-              <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
-              <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="color" name="color" aria-label="Välj Bilens Färg" aria-describedby="colorHelp" required>
-                <option selected disabled hidden>Choose Color</option>
-                <option value="White">⚪ White</option>
-                <option value="Black">⚫ Black</option>
-                <option value="Red">🔴 Red</option>
-                <option value="Blue">🔵 Blue</option>
-                <option value="Yellow">🟡 Yellow</option>
-                <option value="Green">🟢 Green</option>
-                <option value="Grey">🌫️ Grey</option>
-                <option value="Brown">🟤 Brown</option>
-              </select>
-            </div>
-            <div class="mb-4 col-md-6">
-              <label for="fuel" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
-              <select class="bg-white text-slate-800 p-1 flex-1 rounded" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" required>
-                <option selected disabled hidden>Choose Fuel</option>
-                <option value="Petrol">Petrol</option>
-                <option value="Diesel">Diesel</option>
-                <option value="Electricity">Electricity</option>
-                <option value="Flex Fuel/Hybrid">Flex Fuel/Hybrid</option>
-              </select>
-            </div>
-          </div>
-          
-          <div class="col-12 p-0 d-flex">
-            <a type="reset" class="btn btn-gradient btn-gradient--blue ms-auto" id="btnClear"><span>Clear</span></a>
-            <button type="button" class="btn btn-gradient btn-gradient--green ms-2" id="btnSend" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
-            <button type="button" class="btn btn-gradient btn-gradient--purple ms-2" id="btnReadCars"><span>Show Registry</span></button>
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <header class="modal-header">
-                  <h3 class="modal-title fs-3" id="staticBackdropLabel">Registeringsformulär-Summering</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </header>
-                <div class="modal-body">
-                  <ul class="list-group list-group-flush">
-                  <li class="list-group-item fw-bold">License Plate: <p class="fw-normal" id="revRegNum"></p></li>
-                  <li class="list-group-item fw-bold">Model: <p class="fw-normal" id="revModel"></p></li>
-                  <li class="list-group-item fw-bold">Manufacturer: <span class="fw-normal" id="revManufact"></span></li>
-                  <li class="list-group-item fw-bold">Year Manufactored: <span class="fw-normal" id="revManufactYear"></span></li>
-                  <li class="list-group-item fw-bold">Color: <span class="fw-normal" id="revColor"></span></li>
-                  <li class="list-group-item fw-bold">Fuel: <span class="fw-normal" id="revFuel"></span></li>
-                  </ul>
+            <div class="col-md-6">
+              <div class="mb-4 col-12">
+                <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
+                <input class="text-dark p-1 col-12 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufactYear" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" required />
+              </div>
+              <div class="row">
+                <div class="mb-4 col-6 col-md-12">
+                  <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
+                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="color" name="color" aria-label="Välj Bilens Färg" aria-describedby="colorHelp" required>
+                    <option selected disabled hidden>Choose Color</option>
+                    <option value="White">⚪ White</option>
+                    <option value="Black">⚫ Black</option>
+                    <option value="Red">🔴 Red</option>
+                    <option value="Blue">🔵 Blue</option>
+                    <option value="Yellow">🟡 Yellow</option>
+                    <option value="Green">🟢 Green</option>
+                    <option value="Grey">🌫️ Grey</option>
+                    <option value="Brown">🟤 Brown</option>
+                  </select>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" id="modalBtnRegister" name="submit">Register</button>
+                <div class="mb-4 col-6 col-md-12">
+                  <label for="fuel" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
+                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" required>
+                    <option selected disabled hidden>Choose Fuel</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Flex Fuel/Hybrid">Flex Fuel/Hybrid</option>
+                  </select>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+          <div class="col-12 p-0 d-flex justify-content-center mb-3">
+            <a type="reset" class="btn text-black animated-background-button--blue" id="btnClear"><span>Clear</span></a>
+            <button type="button" class="btn text-black animated-background-button--green ms-2" id="btnSend" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
+            <button type="button" class="btn text-black animated-background-button--purple ms-2" id="btnReadCars"><span>Show Registry</span></button>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <header class="modal-header">
+                    <h3 class="modal-title fs-3" id="staticBackdropLabel">Registry Summary</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </header>
+                  <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item fw-bold">License Plate: <p class="fw-normal" id="revRegNum"></p></li>
+                    <li class="list-group-item fw-bold">Model: <p class="fw-normal" id="revModel"></p></li>
+                    <li class="list-group-item fw-bold">Manufacturer: <span class="fw-normal" id="revManufact"></span></li>
+                    <li class="list-group-item fw-bold">Year Manufactored: <span class="fw-normal" id="revManufactYear"></span></li>
+                    <li class="list-group-item fw-bold">Color: <span class="fw-normal" id="revColor"></span></li>
+                    <li class="list-group-item fw-bold">Fuel: <span class="fw-normal" id="revFuel"></span></li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="modalBtnRegister" name="submit">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
     </div>
-      <div class="p-1 justify-content-center" id="listContainer" hidden></div>
+      <div id="listContainer" hidden></div>
     </main>
     <footer class="page__footer text-center py-3">
-      <p class="text-muted">© 2024 - Car Registry</p>
+      <p id="footerYear" class="text-muted"></p>
+      
     </footer>
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black" id="createModalLabel">Notification</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="modalMessage" class="modal-body text-black">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
