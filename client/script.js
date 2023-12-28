@@ -6,7 +6,7 @@ function fetchData() {
   fetch(localUrl)
     .then(result => result.json())  
     .then((cars) => {
-      if (cars.length > 0) {
+      if (cars.length >= 0) {
         let html = '<div class="container"><div class="row justify-content-center">'; 
         cars.forEach(car => {
           
@@ -119,6 +119,15 @@ document.getElementById('fuel').addEventListener('input', modalDetails);
 
 carForm.addEventListener("submit", handleSubmit);
 
+// Initialize Bootstrap Modals
+const myModal = new bootstrap.Modal(document.getElementById('createModal'));
+const summaryModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+
+// Event listener for closing the summaryModal
+document.getElementById('closeModal').addEventListener('click', () => {
+  summaryModal.hide();
+});
+
 function handleSubmit(e) {
   e.preventDefault();
   const serverCarObject = {
@@ -151,21 +160,18 @@ function handleSubmit(e) {
 
   fetch(request)
     .then(() => {
-      // Code to show the modal with different messages
-      const myModal = new bootstrap.Modal(document.getElementById('createModal'));
       const modalBodyMessage = document.getElementById('modalMessage');
 
       if (serverCarObject.id) {
-        // Message for update operation
         modalBodyMessage.innerHTML = `<p>Car with ID: ${serverCarObject.id} has been updated.</p>`;
       } else {
-        // Message for create operation
         modalBodyMessage.innerHTML = `<p>New car has been added.</p>`;
       }
-
       myModal.show();
-
       fetchData();
+    })
+    .catch(error => {
+      console.error('There was an error:', error);
     });
 
   localStorage.removeItem('currentId');
