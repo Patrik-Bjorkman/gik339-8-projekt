@@ -157,3 +157,7 @@ body {
     animation:moveGradientButton 15s ease infinite;
     color: #fff;
 }
+
+.animated-background-button--orange:hover, .animated-background-button--blue:hover, .animated-background-button--green:hover, .animated-background-button--red:hover, .animated-background-button--purple:hover {
+    transform: translate(1%, 1%) scale(1.01);
+}
