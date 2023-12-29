@@ -9,6 +9,10 @@ main.insertAdjacentHTML("beforeend", listContainerHTML);
 const listContainerElement = document.getElementById('listContainer');
 listContainerElement.setAttribute('hidden', 'hidden');
 
+// Initierar Bootstrap Modaler
+const myModal = new bootstrap.Modal(document.getElementById('createModal'));
+const summaryModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+
 function fetchData() {
   fetch(localUrl)
     .then(result => result.json())  
@@ -80,7 +84,6 @@ function setCurrentCar(id) {
 function deleteCar(id) {
   fetch(`${localUrl}/${id}`, { method: 'DELETE' })
     .then((result) => {
-      const myModal = new bootstrap.Modal(document.getElementById('createModal'));
       const modalBodyMessage = document.getElementById('modalMessage');
       modalBodyMessage.innerHTML = `<p>Car with ID: ${id} has been deleted</p>`;
 
@@ -124,10 +127,6 @@ document.getElementById('color').addEventListener('input', modalDetails);
 document.getElementById('fuel').addEventListener('input', modalDetails);
 
 carForm.addEventListener("submit", handleSubmit);
-
-// Initialize Bootstrap Modals
-const myModal = new bootstrap.Modal(document.getElementById('createModal'));
-const summaryModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
 
 // Event listener for closing the summaryModal
 document.getElementById('closeModal').addEventListener('click', () => {
