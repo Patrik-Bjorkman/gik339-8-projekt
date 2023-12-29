@@ -1,15 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #191716;
-    /* background-image: url('./img/pexels-mudassir-ali-2680270.jpg');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-attachment: fixed;  */
 }
-/* .page__header{
-    background: #F3EFE0;
-} */
 .mb-7 {
     margin-bottom: 7rem;
 }

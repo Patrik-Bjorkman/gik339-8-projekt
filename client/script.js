@@ -188,3 +188,24 @@ const date = new Date();
 const year = date.getFullYear();
 
 footerYear.innerHTML = `© ${year} - Car Registry`;
+
+function toggleHelpText(input) {
+  var helpTextId = input.getAttribute('aria-describedby');
+  var helpText = document.getElementById(helpTextId);
+
+  input.addEventListener('focus', function() {
+    helpText.removeAttribute('hidden');
+  });
+
+  input.addEventListener('blur', function() {
+    helpText.setAttribute('hidden', 'hidden');
+  });
+}
+
+document.querySelectorAll('.input-field').forEach(toggleHelpText);
+
+document.querySelectorAll('.digits-only').forEach(function(input) {
+  input.addEventListener('input', function() {
+    this.value = this.value.replace(/[^\d]/g, '');
+  });
+});

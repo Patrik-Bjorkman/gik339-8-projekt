@@ -12,7 +12,7 @@
     <title>Car Registry</title>
   </head>
   <body class="py-5 animated-background text-white bg-secondary-subtle container" >
-    <header class="page__header col-6 mx-auto shadow p-3 mb-5 rounded">
+    <header class="col-6 mx-auto shadow p-3 mb-5 rounded">
      <div class="container">
       <div class="row justify-content-center">
         <div class="col-auto">
@@ -75,21 +75,25 @@
             <div class="col-md-6">
               <div class="mb-4 col-12">
                 <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">License Plate</label>
-                <input class="text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" minlength="2" maxlength="7" title="Enter the registration number of the car from the license plate" required />
+                <input class="input-field text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" minlength="2" maxlength="7" title="Enter the registration number of the car from the license plate" required />
+                <div id="regNumHelp" class="form-text" hidden>Enter License Plate</div>
               </div>
               <div class="mb-4 col-12">
                 <label for="manufact" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
-                <input class="text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" title="Enter the manufactor of the car" required />
+                <input class="input-field text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" title="Enter the manufactor of the car" required />
+                <div id="manufactHelp" class="form-text" hidden>Enter Manufacturer</div>
               </div>
               <div class="mb-4 col-12">
                 <label for="model" class="form-label d-block h5 w-40 text-secondary-emphasis">Model</label>
-                <input class="text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" title="Enter the model of the car" required />
+                <input class="input-field text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" title="Enter the model of the car" required />
+                <div id="modelHelp" class="form-text" hidden>Enter Model</div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="mb-4 col-12">
                 <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
-                <input class="text-dark p-1 col-12 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufact Year" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" title="Enter the year the car was manufactured" required />
+                <input class="input-field text-dark p-1 col-12 rounded digits-only" id="manufactYear" max="4" type="number" name="manufactYear" aria-label="manufact Year" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" title="Enter the year the car was manufactured" required />
+                <div id="manufactYearHelp" class="form-text" hidden>Enter Year Manufactured</div>
               </div>
               <div class="row">
                 <div class="mb-4 col-6 col-md-12">
