@@ -75,26 +75,26 @@
             <div class="col-md-6">
               <div class="mb-4 col-12">
                 <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">License Plate</label>
-                <input class="text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" required />
+                <input class="text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" minlength="2" maxlength="7" title="Enter the registration number of the car from the license plate" required />
               </div>
               <div class="mb-4 col-12">
                 <label for="manufact" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
-                <input class="text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" required />
+                <input class="text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" title="Enter the manufactor of the car" required />
               </div>
               <div class="mb-4 col-12">
                 <label for="model" class="form-label d-block h5 w-40 text-secondary-emphasis">Model</label>
-                <input class="text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" required />
+                <input class="text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" title="Enter the model of the car" required />
               </div>
             </div>
             <div class="col-md-6">
               <div class="mb-4 col-12">
                 <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
-                <input class="text-dark p-1 col-12 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufact Year" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" required />
+                <input class="text-dark p-1 col-12 rounded" id="manufactYear" type="text" name="manufactYear" aria-label="manufact Year" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" title="Enter the year the car was manufactured" required />
               </div>
               <div class="row">
                 <div class="mb-4 col-6 col-md-12">
                   <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
-                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="color" name="color" aria-label="choose color" aria-describedby="colorHelp" required>
+                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="color" name="color" aria-label="choose color" aria-describedby="colorHelp" title="choose the color of the car" required>
                     <option selected disabled hidden>Choose Color</option>
                     <option value="White">⚪ White</option>
                     <option value="Black">⚫ Black</option>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="mb-4 col-6 col-md-12">
                   <label for="fuel" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
-                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" required>
+                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" title="choose the fuel type for the car" required>
                     <option selected disabled hidden>Choose Fuel</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
