@@ -6,6 +6,12 @@ function fetchData() {
   fetch(localUrl)
     .then(result => result.json())  
     .then((cars) => {
+      let listContainerHTML = '<div id="listContainer"></div>';
+      const main = document.querySelector("main");
+      main.insertAdjacentHTML("beforeend", listContainerHTML);
+
+      const listContainerElement = document.getElementById('listContainer');
+      listContainerElement.setAttribute('hidden', 'hidden');
       if (cars.length >= 0) {
         let html = '<div class="container"><div class="row justify-content-center">'; 
         cars.forEach(car => {
@@ -37,7 +43,7 @@ function fetchData() {
                       <p class="card-text">Model: ${car.model}</p>
                       <p class="card-text">Year Manufactured: ${car.manufactYear}</p>
                       <p class="card-text">Fuel: ${car.fuel}</p>
-                      <p class="card-text">ID: ${car.id}</p>
+                    
                       <p class="card-text">Color: <span class="d-inline-block border h-auto w-50" style="${backgroundColorStyle}; ${textColorStyle}">${car.color}</span></p>
                     </div>
                     <div class="card-footer text-body-secondary">
