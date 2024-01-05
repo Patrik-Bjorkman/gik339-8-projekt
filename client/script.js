@@ -11,7 +11,7 @@ listContainerElement.setAttribute('hidden', 'hidden');
 
 // Initierar Bootstrap Modaler
 const myModal = new bootstrap.Modal(document.getElementById('createModal'));
-const summaryModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+const summaryModal = new bootstrap.Modal(document.getElementById('summaryModal'));
 
 function fetchData() {
   fetch(localUrl)
@@ -20,24 +20,11 @@ function fetchData() {
       if (cars.length >= 0) {
         let html = '<div class="container"><div class="row justify-content-center">'; 
         cars.forEach(car => {
-          
           // Kod för att göra texten vit på mörka bakgrunder
-           const colorsRequiringWhiteText = ['Black', 'Blue', 'Green', 'Brown', 'Grey'];
+           const colorsRequiringWhiteText = ['Black', 'Green', 'Brown', 'Grey'];
            const textColorStyle = colorsRequiringWhiteText.includes(car.color) ? 'color: white;' : '';
-          // Kod för att bakgrundsfärgen ska bli lite roligare
-           const backgroundColors = {
-            'red': '#D91E36, #F05B8A',
-            'green': '#27AE35, #A8C686',
-            'blue': '#0A369D, #6477D6',
-            'black': '#01161E, #433E3F',
-            'white': '#F6F7F8, #EFF1C5',
-            'yellow': '#FFFF15, #FFE6A7',
-            'grey': '#838E83, #93ACB5',
-            'brown': '#9F4E00, #A97C73'
-           };
           
            const carColorLower = car.color.toLowerCase();
-           const backgroundColorStyle = backgroundColors[carColorLower] ? `background: linear-gradient(60deg,${backgroundColors[carColorLower]});` : '';
 
           html += `<div class="card shadow col-12 col-md-4 col-lg-3 col-xxl-2 m-1 text-center p-0">
                     <div class="card-header">
@@ -48,11 +35,11 @@ function fetchData() {
                       <p class="card-text">Model: ${car.model}</p>
                       <p class="card-text">Year Manufactured: ${car.manufactYear}</p>
                       <p class="card-text">Fuel: ${car.fuel}</p>
-                      <p class="card-text">Color: <span class="d-inline-block border h-auto w-50" style="${backgroundColorStyle}; ${textColorStyle}">${car.color}</span></p>
+                      <p class="card-text">Color: <span class="d-inline-block border h-auto w-50 animated-background-box--${carColorLower}"; style="${textColorStyle}">${car.color}</span></p>
                     </div>
                     <div class="card-footer text-body-secondary">
-                      <button type="button" class="btn text-black animated-background-button--orange" onClick="setCurrentCar(${car.id})"><span>Update</span></button>
-                      <button type="button" class="btn text-black animated-background-button--red" onClick="deleteCar(${car.id})"><span>Delete</span></button>
+                      <button type="button" class="btn text-black animated-background-button--orange btn-tilt--forwards" onClick="setCurrentCar(${car.id})"><span>Update</span></button>
+                      <button type="button" class="btn text-black animated-background-button--red btn-tilt--backwards" onClick="deleteCar(${car.id})"><span>Delete</span></button>
                     </div>
                   </div>`;
         });
@@ -128,8 +115,10 @@ document.getElementById('fuel').addEventListener('input', modalDetails);
 
 carForm.addEventListener("submit", handleSubmit);
 
-// Event listener for closing the summaryModal
 document.getElementById('closeModal').addEventListener('click', () => {
+  summaryModal.hide();
+});
+document.getElementById('closeCrossModal').addEventListener('click', () => {
   summaryModal.hide();
 });
 

@@ -1,97 +1,72 @@
+:root {
+    --purple-1: #ce06ca;
+    --purple-2: #5e34be;
+    --purple-3: #c325fc;
+    --blue-1: #8bddf0;
+    --blue-2: #0e90b0;
+    --blue-3: #39cdf2;
+    --blue-4: #4416ad;
+    --green-1: #a8e063;
+    --green-2: #317611;
+    --green-3: #6ff033;
+    --green-4: #198754;
+    --green-5: #119d5c;
+    --red-1: #ff9696;
+    --red-2: #d92525;
+    --red-3: #e57289;
+    --orange-1: #EDB458;
+    --orange-2: #E8871E;
+    --orange-3: #fbdd72;
+    --yellow-1: #efe274;
+    --yellow-2: #fbff00;
+    --yellow-3: #dde660;
+    --grey-1: #808F85;
+    --grey-2: #7D8491;
+    --grey-3: #6a6a6a;
+    --black-1: #212738;
+    --black-2: #000000;
+    --black-3: #7d7d7d;
+    --white-1: #e6d5d5;
+    --white-2: #F6F7F8;
+    --white-3: #EFF1C5;
+    --brown-1: #e8994b;
+    --brown-2: #b97124;
+    --brown-3: #f4bc55;
+    --background-gradient: var(--green-4), var(--purple-2), var(--green-5),var(--blue-4);
+    --purple-gradient: var(--purple-1), var(--purple-2), var(--purple-3);
+    --blue-gradient: var(--blue-1), var(--blue-2), var(--blue-3);
+    --green-gradient: var(--green-1), var(--green-2), var(--green-3);
+    --red-gradient: var(--red-1), var(--red-2), var(--red-3);
+    --orange-gradient: var(--orange-1), var(--orange-2), var(--orange-3);
+    --yellow-gradient: var(--yellow-1), var(--yellow-2), var(--yellow-3);
+    --grey-gradient: var(--grey-1), var(--grey-2), var(--grey-3);
+    --black-gradient: var(--black-1), var(--black-2), var(--black-3);
+    --white-gradient: var(--white-1), var(--white-2), var(--white-3);
+    --brown-gradient: var(--brown-1), var(--brown-2), var(--brown-3);
+    --grad-background-animation-20deg:linear-gradient(20deg, var(--background-gradient));
+    --grad-yellow-30deg: linear-gradient(30deg, var(--yellow-gradient));
+    --grad-grey-30deg: linear-gradient(30deg, var(--grey-gradient));
+    --grad-black-30deg: linear-gradient(30deg, var(--black-gradient));
+    --grad-white-30deg: linear-gradient(30deg, var(--white-gradient));
+    --grad-brown-30deg: linear-gradient(30deg, var(--brown-gradient));
+    --grad-blue-30deg: linear-gradient(30deg, var(--blue-gradient));
+    --grad-blue-60deg: linear-gradient(60deg, var(--blue-gradient));
+    --grad-green-30deg: linear-gradient(30deg, var(--green-gradient));
+    --grad-green-60deg: linear-gradient(60deg, var(--green-gradient));
+    --grad-red-30deg: linear-gradient(30deg, var(--red-gradient));
+    --grad-red-60deg: linear-gradient(60deg, var(--red-gradient));
+    --grad-purple-60deg: linear-gradient(60deg, var(--purple-gradient));
+    --grad-orange-60deg: linear-gradient(60deg, var(--orange-gradient));
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    color: #191716;
-}
-.mb-7 {
-    margin-bottom: 7rem;
-}
-.liDiv__styling {
-    min-width: 2rem;
-    min-height: 2rem;
-    color: black;
-}
-.btn-gradient {
-    position: relative;
-    border: none;
-    overflow: hidden;
-    transition: color 0.7s ease;
-  }
-  
-.btn-gradient::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: opacity 1.0s ease;
-  z-index: 0;
-  }
-  
-
-.btn-gradient--orange {
-    background-image: linear-gradient(to right, #EDB458,#E8871E); /* Initial gradient */
-  }
-  
-.btn-gradient--orange::before {
-    background-image: linear-gradient(to right, #E8871E, #EDB458); /* Hover gradient */
 }
 
-.btn-gradient--blue {
-    background-image: linear-gradient(to right, #6dd5ed, #2193b0);
+.bg-brown {
+    background-color: var(--brown-2); /* You can use a specific brown shade here */
 }
   
-.btn-gradient--blue::before {
-    background-image: linear-gradient(to right, #2193b0, #6dd5ed); 
-}
- /* Modifier for green gradient */
-.btn-gradient--green {
-    background-image: linear-gradient(to right, #a8e063, #56ab2f);
-}
-.btn-gradient--green::before {
-    background-image: linear-gradient(to right, #56ab2f, #a8e063); 
-}
-
-.btn-gradient--purple {
-    background-image: linear-gradient(to right, #198754, #5e34be);
-}
-.btn-gradient--purple::before {
-    background-image: linear-gradient(to right, #5e34be, #c325fc); 
-}
-
-.btn-gradient--red {
-    background-image: linear-gradient(to right, #f92323, #ed5e5e);
-}
-.btn-gradient--red::before {
-    background-image: linear-gradient(to right, #ed5e5e, #ff418d);
-}
-.btn-gradient--black {
-    background-image: linear-gradient(to right, #808F85, #434343);
-}
-.btn-gradient--black::before {
-    background-image: linear-gradient(to right, #434343, #000000);
-}
-.btn-gradient:hover::before {
-    opacity: 1;
-}
-.btn-gradient span {
-    position: relative;
-    z-index: 1;
-}
-.btn-gradient--orange:hover::before,
-.btn-gradient--blue:hover::before,
-.btn-gradient--green:hover::before,
-.btn-gradient--purple:hover::before,
-.btn-gradient--red:hover::before,
-.btn-gradient--yellow:hover::before,
-.btn-gradient--pink:hover::before,
-.btn-gradient--teal:hover::before,
-.btn-gradient--black:hover::before,
-.btn-gradient--white:hover::before {
-    opacity: 1;
-  }
-
 @keyframes moveGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -100,56 +75,95 @@ body {
 
 .animated-background {
     position: relative;
-    background: linear-gradient(20deg, #198754, #5e34be,#119d5c, #4416ad);
+    background: var(--grad-background-animation-20deg);
     background-size: 400% 400%;
     animation:moveGradient 20s ease infinite;
-    color: #fff;
-}
-
-
-@keyframes moveGradientButton {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 .animated-background-button--purple {
     position: relative;
-    background: linear-gradient(60deg, #198754, #5e34be,#c325fc);
+    background: var(--grad-purple-60deg);
     background-size: 400% 400%;
-    animation:moveGradientButton 15s ease infinite;
-    color: #fff;
+    animation:moveGradient 15s ease infinite;
 }
 
 .animated-background-button--blue {
     position: relative;
-    background: linear-gradient(60deg, #6dd5ed, #2193b0,#39cdf2);
+    background: var(--grad-blue-60deg);
     background-size: 400% 400%;
-    animation:moveGradientButton 15s ease infinite;
-    color: #fff;
+    animation:moveGradient 10s ease infinite;
 }
 .animated-background-button--green {
     position: relative;
-    background: linear-gradient(60deg, #a8e063, #317611,#6ff033);
+    background: var(--grad-green-60deg);
     background-size: 400% 400%;
-    animation:moveGradientButton 15s ease infinite;
-    color: #fff;
+    animation:moveGradient 15s ease infinite;
 }
 .animated-background-button--red {
     position: relative;
-    background: linear-gradient(60deg, #ff9696, #d92525,#e57289);
+    background: var(--grad-red-60deg);
     background-size: 400% 400%;
-    animation:moveGradientButton 15s ease infinite;
-    color: #fff;
+    animation:moveGradient 15s ease infinite;
 }
 .animated-background-button--orange {
     position: relative;
-    background: linear-gradient(60deg, #EDB458,#E8871E,#fbdd72);
+    background: var(--grad-orange-60deg);
     background-size: 400% 400%;
-    animation:moveGradientButton 15s ease infinite;
-    color: #fff;
+    animation:moveGradient 15s ease infinite;
 }
 
-.animated-background-button--orange:hover, .animated-background-button--blue:hover, .animated-background-button--green:hover, .animated-background-button--red:hover, .animated-background-button--purple:hover {
-    transform: translate(1%, 1%) scale(1.01);
+.btn-tilt--forwards:hover {
+    transform: rotate(2deg) scale(1.01);
+}
+.btn-tilt--backwards:hover {
+    transform: rotate(358deg) scale(1.01);
+}
+
+.animated-background-box--blue {
+    position: relative;
+    background: var(--grad-blue-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--green {
+    position: relative;
+    background: var(--grad-green-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--red {
+    position: relative;
+    background: var(--grad-red-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--yellow {
+    position: relative;
+    background: var(--grad-yellow-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--grey {
+    position: relative;
+    background: var(--grad-grey-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--black {
+    position: relative;
+    background: var(--grad-black-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--white {
+    position: relative;
+    background: var(--grad-white-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
+}
+.animated-background-box--brown {
+    position: relative;
+    background: var(--grad-brown-30deg);
+    background-size: 400% 400%;
+    animation:moveGradient 5s ease infinite;
 }

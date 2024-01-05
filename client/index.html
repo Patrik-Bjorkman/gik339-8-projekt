@@ -12,7 +12,7 @@
     <title>Car Registry</title>
   </head>
   <body class="py-5 animated-background text-white bg-secondary-subtle container" >
-    <header class="col-6 mx-auto shadow p-3 mb-5 rounded">
+    <header class="col-6 col-lg-5 mx-auto shadow p-3 rounded-5">
      <div class="container">
       <div class="row justify-content-center">
         <div class="col-auto">
@@ -37,7 +37,6 @@
                 ./img/png/car_logo_512.png 512w,
                 ./img/png/car_logo_750.png 750w,
               "
-              
               sizes="(min-width: 780px) 289px, 
                      (min-width: 580px) 202px, 
                      calc(50vw - 68px)" 
@@ -59,7 +58,7 @@
       <div class="container-fluid d-flex justify-content-end p-0">
         <form class="dropdown">
           <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span>Actions</span>
+            Actions
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#btnSend">Add Car</a></li>
@@ -100,14 +99,14 @@
                   <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
                   <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="color" name="color" aria-label="choose color" aria-describedby="colorHelp" title="choose the color of the car" required>
                     <option selected disabled hidden>Choose Color</option>
-                    <option value="White">⚪ White</option>
-                    <option value="Black">⚫ Black</option>
-                    <option value="Red">🔴 Red</option>
-                    <option value="Blue">🔵 Blue</option>
-                    <option value="Yellow">🟡 Yellow</option>
-                    <option value="Green">🟢 Green</option>
-                    <option value="Grey">🌫️ Grey</option>
-                    <option value="Brown">🟤 Brown</option>
+                    <option class="bg-white" value="White">White</option>
+                    <option class="bg-dark text-white" value="Black">Black</option>
+                    <option class="bg-danger" value="Red">Red</option>
+                    <option class="bg-primary text-white" value="Blue">Blue</option>
+                    <option class="bg-warning" value="Yellow">Yellow</option>
+                    <option class="bg-success text-white" value="Green">Green</option>
+                    <option class="bg-secondary" value="Grey">Grey</option>
+                    <option class="bg-brown text-white" value="Brown">Brown</option>
                   </select>
                 </div>
                 <div class="mb-4 col-6 col-md-12">
@@ -124,25 +123,17 @@
             </div>
           </div>
           <div class="col-12 p-0 d-flex justify-content-center mb-3">
-            <button type="reset" class="btn text-black animated-background-button--blue" id="btnClear"><span>Clear</span></button>
-            <button type="button" class="btn text-black animated-background-button--green ms-2" id="btnSend" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span>Send</span></button>
-            <button type="button" class="btn text-black animated-background-button--purple ms-2" id="btnReadCars"><span>Show Registry</span></button>
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <button type="reset" class="btn text-black animated-background-button--blue btn-tilt--forwards" id="btnClear">Clear</button>
+            <button type="button" class="btn text-black animated-background-button--green ms-2 btn-tilt--backwards" id="btnSend" data-bs-toggle="modal" data-bs-target="#summaryModal">Send</button>
+            <button type="button" class="btn text-black animated-background-button--purple ms-2 btn-tilt--forwards" id="btnReadCars">Show Registry</button>
+            <div class="modal fade" id="summaryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <header class="modal-header">
-                    <h3 class="modal-title fs-3" id="staticBackdropLabel">Registry Summary</h3>
+                    <h3 class="modal-title fs-3" id="summaryModalLabel">Registry Summary</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </header>
                   <div class="modal-body">
-                    <!-- <ul class="list-group list-group-flush">
-                    <li class="list-group-item fw-bold">License Plate: <p class="fw-normal col-auto" id="revRegNum"></p></li>
-                    <li class="list-group-item fw-bold">Model: <p class="fw-normal" id="revModel"></p></li>
-                    <li class="list-group-item fw-bold">Manufacturer: <span class="fw-normal" id="revManufact"></span></li>
-                    <li class="list-group-item fw-bold">Year Manufactored: <span class="fw-normal" id="revManufactYear"></span></li>
-                    <li class="list-group-item fw-bold">Color: <span class="fw-normal" id="revColor"></span></li>
-                    <li class="list-group-item fw-bold">Fuel: <span class="fw-normal" id="revFuel"></span></li>
-                    </ul> -->
                     <div class="container">
                       <div class="row d-flex mb-3">
                       <p class="col-auto fw-bold m-0">License Plate: </p><p class="col-auto m-0 p-0" id="revRegNum"></p>
@@ -171,8 +162,8 @@
                   </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="modalBtnRegister" name="submit">Register</button>
+                    <button type="button" class="btn btn-secondary btn-tilt--forwards" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-tilt--backwards" id="modalBtnRegister" name="submit">Register</button>
                   </div>
                 </div>
               </div>
@@ -183,19 +174,18 @@
     </main>
     <footer class="page__footer text-center py-3">
       <p id="footerYear" class="text-muted"></p>
-      
     </footer>
-    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title text-black" id="createModalLabel">Notification</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeCrossModal"></button>
           </div>
           <div id="modalMessage" class="modal-body text-black">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeModal">Close</button>
+            <button type="button" class="btn btn-secondary btn-tilt--forwards" data-bs-dismiss="modal" id="closeModal">Close</button>
           </div>
         </div>
       </div>
