@@ -12,6 +12,7 @@
     <title>Car Registry</title>
   </head>
   <body class="py-5 animated-background text-white bg-secondary-subtle container" >
+    <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
     <header class="col-6 col-lg-5 mx-auto shadow p-3 rounded-5">
      <div class="container">
       <div class="row justify-content-center">
@@ -19,28 +20,22 @@
           <picture>
             <source
               type="image/webp"
-              srcset="
-                ./img/webp/car_logo_128.webp 128w,
-                ./img/webp/car_logo_256.webp 256w,
-                ./img/webp/car_logo_512.webp 512w,
-                ./img/webp/car_logo_750.webp 750w,
-              "
-              sizes="(min-width: 780px) 289px, 
-                     (min-width: 580px) 202px, 
-                     calc(50vw - 68px)" 
-            >
+              srcset="./img/webp/car_logo_128.webp 128w,
+                      ./img/webp/car_logo_256.webp 256w,
+                      ./img/webp/car_logo_512.webp 512w,
+                      ./img/webp/car_logo_750.webp 750w"
+              sizes=" (min-width: 780px) 289px, 
+                      (min-width: 580px) 202px, 
+                      calc(50vw - 68px)">
             <source
               type="image/png"
-              srcset="
-                ./img/png/car_logo_128.png 128w,
-                ./img/png/car_logo_256.png 256w,
-                ./img/png/car_logo_512.png 512w,
-                ./img/png/car_logo_750.png 750w,
-              "
-              sizes="(min-width: 780px) 289px, 
-                     (min-width: 580px) 202px, 
-                     calc(50vw - 68px)" 
-            >
+              srcset="./img/png/car_logo_128.png 128w,
+                      ./img/png/car_logo_256.png 256w,
+                      ./img/png/car_logo_512.png 512w,
+                      ./img/png/car_logo_750.png 750w"
+              sizes=" (min-width: 780px) 289px, 
+                      (min-width: 580px) 202px, 
+                      calc(50vw - 68px)">
             <img
               src="./img/png/image_trimmed_512.png"
               width="300"
@@ -57,123 +52,133 @@
     <nav class="navbar">
       <div class="container-fluid d-flex justify-content-end p-0">
         <form class="dropdown">
-          <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a role="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Actions
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#btnSend">Add Car</a></li>
+            <li><a class="dropdown-item" href="#btnSend">Add/Update Car</a></li>
             <li><a class="dropdown-item" href="#btnReadCars">Show Registry</a></li>
           </ul>
         </form>
       </div>
     </nav>
-    <main class="position-relative container mt-8 form-control py-3">
+    <main id="mainContent" class="position-relative container mt-8 form-control py-3">
       <div class="row">
-        <form id="carForm" class="col-12">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-4 col-12">
-                <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">License Plate</label>
-                <input class="input-field text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="regNum" aria-describedby="regNumHelp" placeholder="ABC 123" minlength="2" maxlength="7" title="Enter the registration number of the car from the license plate" required />
-                <div id="regNumHelp" class="form-text" hidden>Enter License Plate</div>
-              </div>
-              <div class="mb-4 col-12">
-                <label for="manufact" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
-                <input class="input-field text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="manufact" aria-describedby="manufactHelp" placeholder="Ex. Ford" title="Enter the manufactor of the car" required />
-                <div id="manufactHelp" class="form-text" hidden>Enter Manufacturer</div>
-              </div>
-              <div class="mb-4 col-12">
-                <label for="model" class="form-label d-block h5 w-40 text-secondary-emphasis">Model</label>
-                <input class="input-field text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="model" aria-describedby="modelHelp" placeholder="Ex. Raptor" title="Enter the model of the car" required />
-                <div id="modelHelp" class="form-text" hidden>Enter Model</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-4 col-12">
-                <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
-                <input class="input-field text-dark p-1 col-12 rounded digits-only" id="manufactYear" max="4" type="text" name="manufactYear" aria-label="manufact Year" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" title="Enter the year the car was manufactured" required />
-                <div id="manufactYearHelp" class="form-text" hidden>Enter Year Manufactured</div>
-              </div>
-              <div class="row">
-                <div class="mb-4 col-6 col-md-12">
-                  <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
-                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="color" name="color" aria-label="choose color" aria-describedby="colorHelp" title="choose the color of the car" required>
-                    <option selected disabled hidden>Choose Color</option>
-                    <option class="bg-white" value="White">White</option>
-                    <option class="bg-dark text-white" value="Black">Black</option>
-                    <option class="bg-danger" value="Red">Red</option>
-                    <option class="bg-primary text-white" value="Blue">Blue</option>
-                    <option class="bg-warning" value="Yellow">Yellow</option>
-                    <option class="bg-success text-white" value="Green">Green</option>
-                    <option class="bg-secondary" value="Grey">Grey</option>
-                    <option class="bg-brown text-white" value="Brown">Brown</option>
-                  </select>
+        <fieldset>
+          <legend class="mb-4" aria-label="Car Details">Car Details</legend>
+          <form id="carForm" class="col-12">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-4 col-12">
+                  <label for="regNum" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">License Plate</label>
+                  <input class="input-field text-dark-emphasis p-1 col-12 rounded text-uppercase" id="regNum" type="text" name="regNum" aria-label="Enter License Plate" aria-describedby="regNumHelp" placeholder="ABC 123" minlength="2" maxlength="7" title="Enter the registration number of the car from the license plate" required />
+                  <div id="regNumHelp" class="form-text" hidden>Enter License Plate</div>
                 </div>
-                <div class="mb-4 col-6 col-md-12">
-                  <label for="fuel" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
-                  <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="fuel" name="fuel" aria-label="Choose Fuel" aria-describedby="fuelHelp" title="choose the fuel type for the car" required>
-                    <option selected disabled hidden>Choose Fuel</option>
-                    <option value="Petrol">Petrol</option>
-                    <option value="Diesel">Diesel</option>
-                    <option value="Electricity">Electricity</option>
-                    <option value="Flex Fuel/Hybrid">Flex Fuel/Hybrid</option>
-                  </select>
+                <div class="mb-4 col-12">
+                  <label for="manufact" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Manufacturer</label>
+                  <input class="input-field text-dark p-1 col-12 rounded text-capitalize" id="manufact" type="text" name="manufact" aria-label="Enter Manufacturer" aria-describedby="manufactHelp" placeholder="Ex. Ford" title="Enter the manufactor of the car" required />
+                  <div id="manufactHelp" class="form-text" hidden>Enter Manufacturer</div>
+                </div>
+                <div class="mb-4 col-12">
+                  <label for="model" class="form-label d-block h5 w-40 text-secondary-emphasis">Model</label>
+                  <input class="input-field text-dark p-1 col-12 rounded text-capitalize" id="model" type="text" name="model" aria-label="Enter Model" aria-describedby="modelHelp" placeholder="Ex. Raptor" title="Enter the model of the car" required />
+                  <div id="modelHelp" class="form-text" hidden>Enter Model</div>
                 </div>
               </div>
+              <div class="col-md-6">
+                <div class="mb-4 col-12">
+                  <label for="manufactYear" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Year Manufactured</label>
+                  <input class="input-field text-dark p-1 col-12 rounded digits-only" id="manufactYear" maxlength="4" type="text" name="manufactYear" aria-label="Enter Manufactured Year" aria-describedby="manufactYearHelp" placeholder="Ex. 2017" title="Enter the year the car was manufactured" required />
+                  <div id="manufactYearHelp" class="form-text" hidden>Enter Year Manufactured</div>
+                </div>
+                <div class="row">
+                  <div class="mb-4 col-6 col-md-12">
+                    <label for="color" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Color</label>
+                    <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="color" name="color" aria-label="Choose color" title="choose the color of the car" required>
+                      <option value="" selected disabled hidden>Choose Color</option>
+                      <option class="bg-white" value="White">White</option>
+                      <option class="bg-dark text-white" value="Black">Black</option>
+                      <option class="bg-danger" value="Red">Red</option>
+                      <option class="bg-primary text-white" value="Blue">Blue</option>
+                      <option class="bg-warning" value="Yellow">Yellow</option>
+                      <option class="bg-success text-white" value="Green">Green</option>
+                      <option class="bg-secondary" value="Grey">Grey</option>
+                      <option class="bg-brown text-white" value="Brown">Brown</option>
+                    </select>
+                  </div>
+                  <div class="mb-4 col-6 col-md-12">
+                    <label for="fuel" class="form-label d-block mr-4 h5 w-40 text-secondary-emphasis">Fuel</label>
+                    <select class="bg-white text-slate-800 p-1 rounded col-md-12" id="fuel" name="fuel" aria-label="Choose Fuel" title="choose the fuel type for the car" required>
+                      <option value="" selected disabled hidden>Choose Fuel</option>
+                      <option value="Petrol">Petrol</option>
+                      <option value="Diesel">Diesel</option>
+                      <option value="Electricity">Electricity</option>
+                      <option value="Flex Fuel/Hybrid">Flex Fuel/Hybrid</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-12 p-0 d-flex justify-content-center mb-3">
-            <button type="reset" class="btn text-black animated-background-button--blue btn-tilt--forwards" id="btnClear">Clear</button>
-            <button type="button" class="btn text-black animated-background-button--green ms-2 btn-tilt--backwards" id="btnSend" data-bs-toggle="modal" data-bs-target="#summaryModal">Send</button>
-            <button type="button" class="btn text-black animated-background-button--purple ms-2 btn-tilt--forwards" id="btnReadCars">Show Registry</button>
-            <div class="modal fade" id="summaryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <header class="modal-header">
-                    <h3 class="modal-title fs-3" id="summaryModalLabel">Registry Summary</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </header>
-                  <div class="modal-body">
-                    <div class="container">
+            <div class="col-12 p-0 d-flex justify-content-center mb-3">
+              <button type="reset" class="btn text-black animated-background-button--blue btn-tilt--forwards" id="btnClear">Clear</button>
+              <button type="button" class="btn text-black animated-background-button--green ms-2 btn-tilt--backwards" id="btnSend" data-bs-toggle="modal" data-bs-target="#summaryModal">Send</button>
+              <button type="button" class="btn text-black animated-background-button--purple ms-2 btn-tilt--forwards" id="btnReadCars">Show Registry</button>
+              <div class="modal fade" id="summaryModal" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <header class="modal-header">
+                      <h3 class="modal-title fs-3" id="summaryModalLabel">Registry Summary</h3>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </header>
+                    <div class="modal-body">
+                      <div class="container">
+                        <div class="row d-flex mb-3">
+                        <p class="col-auto fw-bold m-0">License Plate: </p><p class="col-auto m-0 p-0" id="revRegNum"></p>
+                        <hr class="border border-1 opacity-75 m-0">
+                      </div>
                       <div class="row d-flex mb-3">
-                      <p class="col-auto fw-bold m-0">License Plate: </p><p class="col-auto m-0 p-0" id="revRegNum"></p>
-                      <hr class="border border-1 opacity-75 m-0">
-                    </div>
-                    <div class="row d-flex mb-3">
-                      <p class="col-auto fw-bold m-0">Model: </p><p class="col-auto m-0 p-0" id="revModel"></p>
-                      <hr class="border border-1 opacity-75 m-0">
-                    </div>
-                    <div class="row d-flex mb-3">
-                      <p class="col-auto fw-bold m-0">Manufacturer: </p><p class="col-auto m-0 p-0" id="revManufact"></p>
-                      <hr class="border border-1 opacity-75 m-0">
-                    </div>
+                        <p class="col-auto fw-bold m-0">Model: </p><p class="col-auto m-0 p-0" id="revModel"></p>
+                        <hr class="border border-1 opacity-75 m-0">
+                      </div>
                       <div class="row d-flex mb-3">
-                      <p class="col-auto fw-bold m-0">Year Manufactored: </p><p class="col-auto m-0 p-0" id="revManufactYear"></p>
-                      <hr class="border border-1 opacity-75 m-0">
+                        <p class="col-auto fw-bold m-0">Manufacturer: </p><p class="col-auto m-0 p-0" id="revManufact"></p>
+                        <hr class="border border-1 opacity-75 m-0">
+                      </div>
+                        <div class="row d-flex mb-3">
+                        <p class="col-auto fw-bold m-0">Year Manufactored: </p><p class="col-auto m-0 p-0" id="revManufactYear"></p>
+                        <hr class="border border-1 opacity-75 m-0">
+                      </div>
+                      <div class="row d-flex mb-3">
+                        <p class="col-auto fw-bold m-0">Color: </p><p class="col-auto m-0 p-0" id="revColor"></p>
+                        <hr class="border border-1 opacity-75 m-0">
+                      </div>
+                      <div class="row d-flex mb-3">
+                        <p class="col-auto fw-bold m-0">Fuel: </p><p class="col-auto m-0 p-0" id="revFuel"></p>
+                        <hr class="border border-1 opacity-75 m-0">
+                      </div>
                     </div>
-                    <div class="row d-flex mb-3">
-                      <p class="col-auto fw-bold m-0">Color: </p><p class="col-auto m-0 p-0" id="revColor"></p>
-                      <hr class="border border-1 opacity-75 m-0">
                     </div>
-                    <div class="row d-flex mb-3">
-                      <p class="col-auto fw-bold m-0">Fuel: </p><p class="col-auto m-0 p-0" id="revFuel"></p>
-                      <hr class="border border-1 opacity-75 m-0">
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary btn-tilt--forwards" data-bs-dismiss="modal" aria-label="Close modal">Close</button>
+                      <button type="submit" class="btn btn-primary btn-tilt--backwards" id="modalBtnRegister" name="submit" aria-label="Register Car">Register</button>
                     </div>
-                  </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-tilt--forwards" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary btn-tilt--backwards" id="modalBtnRegister" name="submit">Register</button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
-    </div>
+          </form>
+        </fieldset>
+      </div>
     </main>
     <footer class="page__footer text-center py-3">
       <p id="footerYear" class="text-muted"></p>
+      <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="Valid CSS!" />
+        </a>
+      </p>
     </footer>
     <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
       <div class="modal-dialog">

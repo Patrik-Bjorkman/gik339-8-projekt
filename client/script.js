@@ -11,8 +11,15 @@ listContainerElement.setAttribute('hidden', 'hidden');
 
 // Initierar Bootstrap Modaler
 const myModal = new bootstrap.Modal(document.getElementById('createModal'));
-const summaryModal = new bootstrap.Modal(document.getElementById('summaryModal'));
+const summaryModalEl = document.getElementById('summaryModal');
+const summaryModalLabel = document.getElementById('summaryModalLabel');
 
+const summaryModal = new bootstrap.Modal(summaryModalEl);
+
+// Add the event listener to the modal's DOM element
+summaryModalEl.addEventListener('shown.bs.modal', function() {
+  summaryModalLabel.focus();
+});
 function fetchData() {
   fetch(localUrl)
     .then(result => result.json())  
