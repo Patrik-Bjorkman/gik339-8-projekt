@@ -1,4 +1,5 @@
 :root {
+    /* Definierar olika färgnyanser som CSS-variabler*/
     --purple-1: #ce06ca;
     --purple-2: #5e34be;
     --purple-3: #c325fc;
@@ -17,9 +18,9 @@
     --orange-1: #EDB458;
     --orange-2: #E8871E;
     --orange-3: #fbdd72;
-    --yellow-1: #efe274;
-    --yellow-2: #fbff00;
-    --yellow-3: #dde660;
+    --yellow-1: #fefe7e;
+    --yellow-2: #fff94f;
+    --yellow-3: #e9ea15;
     --grey-1: #808F85;
     --grey-2: #7D8491;
     --grey-3: #6a6a6a;
@@ -32,6 +33,7 @@
     --brown-1: #e8994b;
     --brown-2: #b97124;
     --brown-3: #f4bc55;
+    /* Skapar linear-gradients med de definierade färgerna. */
     --background-gradient: var(--green-4), var(--purple-2), var(--green-5),var(--blue-4);
     --purple-gradient: var(--purple-1), var(--purple-2), var(--purple-3);
     --blue-gradient: var(--blue-1), var(--blue-2), var(--blue-3);
@@ -43,6 +45,7 @@
     --black-gradient: var(--black-1), var(--black-2), var(--black-3);
     --white-gradient: var(--white-1), var(--white-2), var(--white-3);
     --brown-gradient: var(--brown-1), var(--brown-2), var(--brown-3);
+    /* Definierar linear-gradients med olika vinklar och färgkombinationer. */
     --grad-background-animation-20deg:linear-gradient(20deg, var(--background-gradient));
     --grad-yellow-30deg: linear-gradient(30deg, var(--yellow-gradient));
     --grad-grey-30deg: linear-gradient(30deg, var(--grey-gradient));
@@ -58,21 +61,21 @@
     --grad-purple-60deg: linear-gradient(60deg, var(--purple-gradient));
     --grad-orange-60deg: linear-gradient(60deg, var(--orange-gradient));
 }
-
+/* Ange grundläggande font-family för hela webbplatsens text. */
 body {
     font-family: 'Roboto', sans-serif;
 }
-
+/* Skapa en klass för att tillämpa en specifik bakgrundsfärg. */
 .bg-brown {
-    background-color: var(--brown-2); /* You can use a specific brown shade here */
+    background-color: var(--brown-2);
 }
-  
+/* Definiera en keyframes-animation för att skapa en rörlig gradienteffekt. */
 @keyframes moveGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
+/* Skapa en klass för att tillämpa den animerade gradientbakgrunden. */
 .animated-background {
     position: relative;
     background: var(--grad-background-animation-20deg);
@@ -80,6 +83,7 @@ body {
     animation:moveGradient 20s ease infinite;
 }
 
+/* Skapar klasser för knappar med olika animerade bakgrundsfärger */
 .animated-background-button--purple {
     position: relative;
     background: var(--grad-purple-60deg);
@@ -112,58 +116,61 @@ body {
     animation:moveGradient 15s ease infinite;
 }
 
+/* Klass för knappar som lutar framåt vid hovring. */
 .btn-tilt--forwards:hover {
     transform: rotate(2deg) scale(1.01);
 }
+/* Klass för knappar som lutar bakåt vid hovring. */
 .btn-tilt--backwards:hover {
     transform: rotate(358deg) scale(1.01);
 }
 
+/* Klasser för animerade bakgrunder med olika färgteman. */
 .animated-background-box--blue {
     position: relative;
     background: var(--grad-blue-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--green {
     position: relative;
     background: var(--grad-green-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--red {
     position: relative;
     background: var(--grad-red-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--yellow {
     position: relative;
     background: var(--grad-yellow-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--grey {
     position: relative;
     background: var(--grad-grey-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--black {
     position: relative;
     background: var(--grad-black-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--white {
     position: relative;
     background: var(--grad-white-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
 .animated-background-box--brown {
     position: relative;
     background: var(--grad-brown-30deg);
-    background-size: 400% 400%;
-    animation:moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    animation:moveGradient 8s ease infinite;
 }
